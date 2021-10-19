@@ -13,7 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>publish\</PublishUrl>
+    <PublishUrl>C:\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -26,6 +26,7 @@
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -48,6 +49,18 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>48CD538900E20A6B7EBE485C2E6964199A46195D</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>JKSApp_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -62,16 +75,148 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLayer\Achievement.cs" />
+    <Compile Include="BusinessLayer\Affiliation.cs" />
+    <Compile Include="BusinessLayer\Belt.cs" />
+    <Compile Include="BusinessLayer\Category.cs" />
+    <Compile Include="BusinessLayer\Competition.cs" />
+    <Compile Include="BusinessLayer\DatabaseOperation.cs" />
+    <Compile Include="BusinessLayer\ComponentController.cs" />
+    <Compile Include="BusinessLayer\Dojo.cs" />
+    <Compile Include="BusinessLayer\Event.cs" />
+    <Compile Include="BusinessLayer\Grading.cs" />
+    <Compile Include="BusinessLayer\Member.cs" />
+    <Compile Include="BusinessLayer\Qualification.cs" />
+    <Compile Include="BusinessLayer\Validation.cs" />
+    <Compile Include="DataLayer\DataHandler.cs" />
+    <Compile Include="Presentation Layer\Display.cs" />
     <Compile Include="Presentation Layer\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentation Layer\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation Layer\frmAchievement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\frmAchievement.Designer.cs">
+      <DependentUpon>frmAchievement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\frmAffiliation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\frmAffiliation.Designer.cs">
+      <DependentUpon>frmAffiliation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\frmBelt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\frmBelt.Designer.cs">
+      <DependentUpon>frmBelt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\frmCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\frmCategory.Designer.cs">
+      <DependentUpon>frmCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\frmCompetition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\frmCompetition.Designer.cs">
+      <DependentUpon>frmCompetition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\frmCreateCompetition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\frmCreateCompetition.Designer.cs">
+      <DependentUpon>frmCreateCompetition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\frmCreateDojo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\frmCreateDojo.Designer.cs">
+      <DependentUpon>frmCreateDojo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\frmDojo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\frmDojo.Designer.cs">
+      <DependentUpon>frmDojo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\frmEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\frmEvent.Designer.cs">
+      <DependentUpon>frmEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\frmGrading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\frmGrading.Designer.cs">
+      <DependentUpon>frmGrading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\frmMainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\frmMainMenu.Designer.cs">
+      <DependentUpon>frmMainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\frmMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\frmMember.Designer.cs">
+      <DependentUpon>frmMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\frmQualification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\frmQualification.Designer.cs">
+      <DependentUpon>frmQualification.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Presentation Layer\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\frmAchievement.resx">
+      <DependentUpon>frmAchievement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\frmAffiliation.resx">
+      <DependentUpon>frmAffiliation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\frmBelt.resx">
+      <DependentUpon>frmBelt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\frmCategory.resx">
+      <DependentUpon>frmCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\frmCompetition.resx">
+      <DependentUpon>frmCompetition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\frmCreateCompetition.resx">
+      <DependentUpon>frmCreateCompetition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\frmCreateDojo.resx">
+      <DependentUpon>frmCreateDojo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\frmDojo.resx">
+      <DependentUpon>frmDojo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\frmEvent.resx">
+      <DependentUpon>frmEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\frmGrading.resx">
+      <DependentUpon>frmGrading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\frmMainMenu.resx">
+      <DependentUpon>frmMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\frmMember.resx">
+      <DependentUpon>frmMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\frmQualification.resx">
+      <DependentUpon>frmQualification.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -81,6 +226,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -108,9 +254,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DataLayer\JKSNew.mdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <None Include="Presentation Layer\Images\JKSLogo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

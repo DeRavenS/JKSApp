@@ -8,55 +8,38 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using JKSApp.Presentation_Layer;
 
 
 namespace JKSApp
 {
     
 
-    public partial class Form1 : Form
+    public partial class frmAppStart : Form
     {
-        BindingSource source = new BindingSource();
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Uni\DBD281\Project\Karate\JKSApp\JKSApp\DataLayer\JKSNew.mdb");
-        public Form1()
+              
+        public frmAppStart()
         {
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            try
-            {
-                con.Open();
-                
-                
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Failed");
-               
-            }
+            CenterToScreen();
             
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
-            try
-            {
-                OleDbCommand cmd = new OleDbCommand();
-                cmd.Connection = con;
-                cmd.CommandText = "Select * from Belt";
-                OleDbDataReader reader = cmd.ExecuteReader();
-                source.DataSource = reader;
-                dataGridView1.DataSource = source;
-                con.Close();
-            }
-            catch (Exception ex)
-            {
+            Close();
+        }
 
-                MessageBox.Show(ex.Message);
-            }
-           
+        private void btnContinue_Click(object sender, EventArgs e)
+        {
+            frmMainMenu frmmain = new frmMainMenu();
+            frmmain.Show();
+            this.Hide();
+            
         }
     }
 }
