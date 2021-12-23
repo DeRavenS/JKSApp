@@ -10,7 +10,7 @@ namespace JKSApp.BusinessLayer
     class Affiliation
     {
         int affiliationID;
-        double affiliationFee;
+        decimal affiliationFee;
         DateTime affiliationDate;
         int memberID;
 
@@ -18,7 +18,7 @@ namespace JKSApp.BusinessLayer
         {
         }
 
-        public Affiliation(int affiliationID, double affiliationFee, DateTime affiliationDate, int memberID)
+        public Affiliation(int affiliationID, decimal affiliationFee, DateTime affiliationDate, int memberID)
         {
             this.AffiliationID = affiliationID;
             this.AffiliationFee = affiliationFee;
@@ -27,7 +27,7 @@ namespace JKSApp.BusinessLayer
         }
 
         public int AffiliationID { get => affiliationID; set => affiliationID = value; }
-        public double AffiliationFee { get => affiliationFee; set => affiliationFee = value; }
+        public decimal AffiliationFee { get => affiliationFee; set => affiliationFee = value; }
         public DateTime AffiliationDate { get => affiliationDate; set => affiliationDate = value; }
         public int MemberID { get => memberID; set => memberID = value; }
 

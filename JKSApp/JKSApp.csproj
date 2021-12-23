@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -63,6 +63,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -79,9 +80,10 @@
     <Compile Include="BusinessLayer\Affiliation.cs" />
     <Compile Include="BusinessLayer\Belt.cs" />
     <Compile Include="BusinessLayer\Category.cs" />
-    <Compile Include="BusinessLayer\Competition.cs" />
     <Compile Include="BusinessLayer\DatabaseOperation.cs" />
-    <Compile Include="BusinessLayer\ComponentController.cs" />
+    <Compile Include="BusinessLayer\StaticBindingSource.cs" />
+    <Compile Include="BusinessLayer\table.cs" />
+    <Compile Include="Presentation Layer\ComponentController.cs" />
     <Compile Include="BusinessLayer\Dojo.cs" />
     <Compile Include="BusinessLayer\Event.cs" />
     <Compile Include="BusinessLayer\Grading.cs" />
@@ -102,6 +104,30 @@
     <Compile Include="Presentation Layer\frmAchievement.Designer.cs">
       <DependentUpon>frmAchievement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation Layer\frmAddMemberAchievement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\frmAddMemberAchievement.Designer.cs">
+      <DependentUpon>frmAddMemberAchievement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\frmAddMemberEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\frmAddMemberEvent.Designer.cs">
+      <DependentUpon>frmAddMemberEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\frmAddMemberGrading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\frmAddMemberGrading.Designer.cs">
+      <DependentUpon>frmAddMemberGrading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\frmAddMemberQualification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\frmAddMemberQualification.Designer.cs">
+      <DependentUpon>frmAddMemberQualification.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation Layer\frmAffiliation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,23 +146,47 @@
     <Compile Include="Presentation Layer\frmCategory.Designer.cs">
       <DependentUpon>frmCategory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Layer\frmCompetition.cs">
+    <Compile Include="Presentation Layer\frmControlPanel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation Layer\frmCompetition.Designer.cs">
-      <DependentUpon>frmCompetition.cs</DependentUpon>
+    <Compile Include="Presentation Layer\frmControlPanel.Designer.cs">
+      <DependentUpon>frmControlPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Layer\frmCreateCompetition.cs">
+    <Compile Include="Presentation Layer\frmCreateAchievement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation Layer\frmCreateCompetition.Designer.cs">
-      <DependentUpon>frmCreateCompetition.cs</DependentUpon>
+    <Compile Include="Presentation Layer\frmCreateAchievement.Designer.cs">
+      <DependentUpon>frmCreateAchievement.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Layer\frmCreateDojo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentation Layer\frmCreateDojo.Designer.cs">
       <DependentUpon>frmCreateDojo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\frmCreateEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\frmCreateEvent.Designer.cs">
+      <DependentUpon>frmCreateEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\frmCreateGrading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\frmCreateGrading.Designer.cs">
+      <DependentUpon>frmCreateGrading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\frmCreateMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\frmCreateMember.Designer.cs">
+      <DependentUpon>frmCreateMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\frmCreateQualification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\frmCreateQualification.Designer.cs">
+      <DependentUpon>frmCreateQualification.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Layer\frmDojo.cs">
       <SubType>Form</SubType>
@@ -182,6 +232,18 @@
     <EmbeddedResource Include="Presentation Layer\frmAchievement.resx">
       <DependentUpon>frmAchievement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\frmAddMemberAchievement.resx">
+      <DependentUpon>frmAddMemberAchievement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\frmAddMemberEvent.resx">
+      <DependentUpon>frmAddMemberEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\frmAddMemberGrading.resx">
+      <DependentUpon>frmAddMemberGrading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\frmAddMemberQualification.resx">
+      <DependentUpon>frmAddMemberQualification.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\frmAffiliation.resx">
       <DependentUpon>frmAffiliation.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,14 +253,26 @@
     <EmbeddedResource Include="Presentation Layer\frmCategory.resx">
       <DependentUpon>frmCategory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\frmCompetition.resx">
-      <DependentUpon>frmCompetition.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation Layer\frmControlPanel.resx">
+      <DependentUpon>frmControlPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\frmCreateCompetition.resx">
-      <DependentUpon>frmCreateCompetition.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation Layer\frmCreateAchievement.resx">
+      <DependentUpon>frmCreateAchievement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\frmCreateDojo.resx">
       <DependentUpon>frmCreateDojo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\frmCreateEvent.resx">
+      <DependentUpon>frmCreateEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\frmCreateGrading.resx">
+      <DependentUpon>frmCreateGrading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\frmCreateMember.resx">
+      <DependentUpon>frmCreateMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\frmCreateQualification.resx">
+      <DependentUpon>frmCreateQualification.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\frmDojo.resx">
       <DependentUpon>frmDojo.cs</DependentUpon>

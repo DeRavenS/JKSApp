@@ -15,6 +15,7 @@ namespace JKSApp.Presentation_Layer
     {
         Achievement ach = new Achievement();
         BindingSource source = new BindingSource();
+        string sortOrder = "";
         public frmAchievement()
         {
             InitializeComponent();
@@ -22,14 +23,14 @@ namespace JKSApp.Presentation_Layer
 
         private void frmAchievement_Load(object sender, EventArgs e)
         {
-            source.DataSource = ach.getAchievement();
-            dgvAchievement.DataSource = source;
+            StaticBindingSource.source.DataSource = ach.getAchievement();
+            dgvAchievement.DataSource = StaticBindingSource.source;
         }
 
         private void btnDisplayAllAchievement_Click(object sender, EventArgs e)
         {
-            source.DataSource = ach.getAchievement();
-            dgvAchievement.DataSource = source;
+            StaticBindingSource.source.DataSource = ach.getAchievement();
+            dgvAchievement.DataSource = StaticBindingSource.source;
         }
 
         private void btnBackToMainMenu_Click(object sender, EventArgs e)
@@ -37,6 +38,12 @@ namespace JKSApp.Presentation_Layer
             frmMainMenu frm = new frmMainMenu();
             frm.Show();
             Close();
+        }
+
+        private void dgvAchievement_SelectionChanged(object sender, EventArgs e)
+        {
+            Display dis = new Display();
+            dis.achievementListView(lvMembers);
         }
     }
 }

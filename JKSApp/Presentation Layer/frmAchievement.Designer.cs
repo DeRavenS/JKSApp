@@ -29,48 +29,62 @@ namespace JKSApp.Presentation_Layer
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnDisplayAllAchievement = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSearchGrading = new System.Windows.Forms.Button();
             this.txtSearchGrading = new System.Windows.Forms.TextBox();
-            this.btnBackToMainMenu = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnLast = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnFirst = new System.Windows.Forms.Button();
             this.btnPrevious = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.lvMembers = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnDeleteGrading = new System.Windows.Forms.Button();
-            this.btnUpdateGrading = new System.Windows.Forms.Button();
-            this.btnNewGrading = new System.Windows.Forms.Button();
+            this.lvMembers = new System.Windows.Forms.ListView();
+            this.button1 = new System.Windows.Forms.Button();
             this.dgvAchievement = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.MemberFirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.MemberLastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAchievement)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnDisplayAllAchievement);
-            this.groupBox2.Location = new System.Drawing.Point(273, 12);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            this.groupBox2.Location = new System.Drawing.Point(0, 603);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1040, 48);
+            this.groupBox2.Size = new System.Drawing.Size(277, 56);
             this.groupBox2.TabIndex = 40;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Filters";
             // 
             // btnDisplayAllAchievement
             // 
-            this.btnDisplayAllAchievement.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDisplayAllAchievement.Location = new System.Drawing.Point(6, 12);
+            this.btnDisplayAllAchievement.FlatAppearance.BorderSize = 0;
+            this.btnDisplayAllAchievement.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            this.btnDisplayAllAchievement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDisplayAllAchievement.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDisplayAllAchievement.ForeColor = System.Drawing.Color.Snow;
+            this.btnDisplayAllAchievement.Location = new System.Drawing.Point(7, 19);
             this.btnDisplayAllAchievement.Name = "btnDisplayAllAchievement";
-            this.btnDisplayAllAchievement.Size = new System.Drawing.Size(183, 30);
+            this.btnDisplayAllAchievement.Size = new System.Drawing.Size(258, 31);
             this.btnDisplayAllAchievement.TabIndex = 12;
             this.btnDisplayAllAchievement.Text = "Display All Achievements";
             this.btnDisplayAllAchievement.UseVisualStyleBackColor = true;
@@ -80,40 +94,37 @@ namespace JKSApp.Presentation_Layer
             // 
             this.groupBox1.Controls.Add(this.btnSearchGrading);
             this.groupBox1.Controls.Add(this.txtSearchGrading);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(259, 48);
+            this.groupBox1.Size = new System.Drawing.Size(265, 69);
             this.groupBox1.TabIndex = 39;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search Achievement";
             // 
             // btnSearchGrading
             // 
-            this.btnSearchGrading.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchGrading.Location = new System.Drawing.Point(166, 12);
+            this.btnSearchGrading.FlatAppearance.BorderSize = 0;
+            this.btnSearchGrading.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            this.btnSearchGrading.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchGrading.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchGrading.ForeColor = System.Drawing.Color.Snow;
+            this.btnSearchGrading.Location = new System.Drawing.Point(168, 11);
             this.btnSearchGrading.Name = "btnSearchGrading";
-            this.btnSearchGrading.Size = new System.Drawing.Size(87, 30);
+            this.btnSearchGrading.Size = new System.Drawing.Size(87, 52);
             this.btnSearchGrading.TabIndex = 13;
             this.btnSearchGrading.Text = "Search";
             this.btnSearchGrading.UseVisualStyleBackColor = true;
             // 
             // txtSearchGrading
             // 
-            this.txtSearchGrading.Location = new System.Drawing.Point(6, 19);
+            this.txtSearchGrading.Location = new System.Drawing.Point(8, 30);
             this.txtSearchGrading.Name = "txtSearchGrading";
-            this.txtSearchGrading.Size = new System.Drawing.Size(154, 20);
+            this.txtSearchGrading.Size = new System.Drawing.Size(154, 26);
             this.txtSearchGrading.TabIndex = 11;
-            // 
-            // btnBackToMainMenu
-            // 
-            this.btnBackToMainMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackToMainMenu.Location = new System.Drawing.Point(1238, 605);
-            this.btnBackToMainMenu.Name = "btnBackToMainMenu";
-            this.btnBackToMainMenu.Size = new System.Drawing.Size(75, 32);
-            this.btnBackToMainMenu.TabIndex = 38;
-            this.btnBackToMainMenu.Text = "Back";
-            this.btnBackToMainMenu.UseVisualStyleBackColor = true;
-            this.btnBackToMainMenu.Click += new System.EventHandler(this.btnBackToMainMenu_Click);
             // 
             // panel3
             // 
@@ -122,139 +133,213 @@ namespace JKSApp.Presentation_Layer
             this.panel3.Controls.Add(this.btnNext);
             this.panel3.Controls.Add(this.btnFirst);
             this.panel3.Controls.Add(this.btnPrevious);
-            this.panel3.Location = new System.Drawing.Point(273, 566);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(10, 616);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1040, 33);
+            this.panel3.Size = new System.Drawing.Size(1202, 43);
             this.panel3.TabIndex = 37;
             // 
             // btnLast
             // 
-            this.btnLast.Location = new System.Drawing.Point(964, 3);
+            this.btnLast.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnLast.FlatAppearance.BorderSize = 0;
+            this.btnLast.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            this.btnLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLast.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLast.ForeColor = System.Drawing.Color.Snow;
+            this.btnLast.Location = new System.Drawing.Point(1050, 0);
             this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(75, 23);
+            this.btnLast.Size = new System.Drawing.Size(75, 41);
             this.btnLast.TabIndex = 5;
             this.btnLast.Text = ">>";
             this.btnLast.UseVisualStyleBackColor = true;
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(883, 3);
+            this.btnNext.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnNext.FlatAppearance.BorderSize = 0;
+            this.btnNext.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.ForeColor = System.Drawing.Color.Snow;
+            this.btnNext.Location = new System.Drawing.Point(1125, 0);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(75, 23);
+            this.btnNext.Size = new System.Drawing.Size(75, 41);
             this.btnNext.TabIndex = 6;
             this.btnNext.Text = ">";
             this.btnNext.UseVisualStyleBackColor = true;
             // 
             // btnFirst
             // 
-            this.btnFirst.Location = new System.Drawing.Point(3, 3);
+            this.btnFirst.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnFirst.FlatAppearance.BorderSize = 0;
+            this.btnFirst.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            this.btnFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFirst.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFirst.ForeColor = System.Drawing.Color.Snow;
+            this.btnFirst.Location = new System.Drawing.Point(75, 0);
             this.btnFirst.Name = "btnFirst";
-            this.btnFirst.Size = new System.Drawing.Size(75, 23);
+            this.btnFirst.Size = new System.Drawing.Size(75, 41);
             this.btnFirst.TabIndex = 3;
             this.btnFirst.Text = "<<";
             this.btnFirst.UseVisualStyleBackColor = true;
             // 
             // btnPrevious
             // 
-            this.btnPrevious.Location = new System.Drawing.Point(84, 3);
+            this.btnPrevious.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnPrevious.FlatAppearance.BorderSize = 0;
+            this.btnPrevious.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            this.btnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrevious.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevious.ForeColor = System.Drawing.Color.Snow;
+            this.btnPrevious.Location = new System.Drawing.Point(0, 0);
             this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(75, 23);
+            this.btnPrevious.Size = new System.Drawing.Size(75, 41);
             this.btnPrevious.TabIndex = 4;
             this.btnPrevious.Text = "<";
             this.btnPrevious.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.lvMembers);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btnDeleteGrading);
-            this.panel1.Controls.Add(this.btnUpdateGrading);
-            this.panel1.Controls.Add(this.btnNewGrading);
-            this.panel1.Location = new System.Drawing.Point(6, 66);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(265, 533);
+            this.panel1.Size = new System.Drawing.Size(265, 603);
             this.panel1.TabIndex = 36;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            this.label1.Location = new System.Drawing.Point(0, 69);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(265, 30);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Members Awarded";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lvMembers
+            // 
+            this.lvMembers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lvMembers.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lvMembers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.MemberFirstName,
+            this.MemberLastName});
+            this.lvMembers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvMembers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvMembers.HideSelection = false;
+            this.lvMembers.Location = new System.Drawing.Point(0, 99);
+            this.lvMembers.Name = "lvMembers";
+            this.lvMembers.Size = new System.Drawing.Size(265, 467);
+            this.lvMembers.TabIndex = 29;
+            this.lvMembers.UseCompatibleStateImageBehavior = false;
+            this.lvMembers.View = System.Windows.Forms.View.Details;
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(40, 370);
+            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Snow;
+            this.button1.Location = new System.Drawing.Point(0, 566);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(183, 30);
+            this.button1.Size = new System.Drawing.Size(265, 37);
             this.button1.TabIndex = 13;
             this.button1.Text = "Award Members";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // lvMembers
-            // 
-            this.lvMembers.HideSelection = false;
-            this.lvMembers.Location = new System.Drawing.Point(11, 33);
-            this.lvMembers.Name = "lvMembers";
-            this.lvMembers.Size = new System.Drawing.Size(247, 331);
-            this.lvMembers.TabIndex = 29;
-            this.lvMembers.UseCompatibleStateImageBehavior = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(68, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 13);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Members Awarded";
-            // 
-            // btnDeleteGrading
-            // 
-            this.btnDeleteGrading.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteGrading.Location = new System.Drawing.Point(11, 496);
-            this.btnDeleteGrading.Name = "btnDeleteGrading";
-            this.btnDeleteGrading.Size = new System.Drawing.Size(243, 30);
-            this.btnDeleteGrading.TabIndex = 14;
-            this.btnDeleteGrading.Text = "Delete Grading";
-            this.btnDeleteGrading.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdateGrading
-            // 
-            this.btnUpdateGrading.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateGrading.Location = new System.Drawing.Point(11, 460);
-            this.btnUpdateGrading.Name = "btnUpdateGrading";
-            this.btnUpdateGrading.Size = new System.Drawing.Size(243, 30);
-            this.btnUpdateGrading.TabIndex = 12;
-            this.btnUpdateGrading.Text = "Edit Selected Achievement";
-            this.btnUpdateGrading.UseVisualStyleBackColor = true;
-            // 
-            // btnNewGrading
-            // 
-            this.btnNewGrading.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewGrading.Location = new System.Drawing.Point(11, 424);
-            this.btnNewGrading.Name = "btnNewGrading";
-            this.btnNewGrading.Size = new System.Drawing.Size(243, 30);
-            this.btnNewGrading.TabIndex = 9;
-            this.btnNewGrading.Text = "Add new Achievement";
-            this.btnNewGrading.UseVisualStyleBackColor = true;
-            // 
             // dgvAchievement
             // 
+            this.dgvAchievement.AllowUserToAddRows = false;
+            this.dgvAchievement.AllowUserToDeleteRows = false;
+            this.dgvAchievement.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvAchievement.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.dgvAchievement.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvAchievement.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAchievement.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAchievement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAchievement.Location = new System.Drawing.Point(273, 66);
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAchievement.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvAchievement.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvAchievement.EnableHeadersVisualStyles = false;
+            this.dgvAchievement.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.dgvAchievement.Location = new System.Drawing.Point(10, 0);
             this.dgvAchievement.Name = "dgvAchievement";
-            this.dgvAchievement.Size = new System.Drawing.Size(1040, 498);
+            this.dgvAchievement.RowHeadersVisible = false;
+            this.dgvAchievement.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAchievement.Size = new System.Drawing.Size(1202, 616);
             this.dgvAchievement.TabIndex = 35;
+            this.dgvAchievement.SelectionChanged += new System.EventHandler(this.dgvAchievement_SelectionChanged);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dgvAchievement);
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(277, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.panel2.Size = new System.Drawing.Size(1212, 659);
+            this.panel2.TabIndex = 41;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.panel2);
+            this.panel6.Controls.Add(this.panel7);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(10, 10);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1489, 659);
+            this.panel6.TabIndex = 44;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.panel1);
+            this.panel7.Controls.Add(this.groupBox2);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(277, 659);
+            this.panel7.TabIndex = 44;
+            // 
+            // MemberFirstName
+            // 
+            this.MemberFirstName.Text = "First Name";
+            this.MemberFirstName.Width = 100;
+            // 
+            // MemberLastName
+            // 
+            this.MemberLastName.Text = "LastName";
             // 
             // frmAchievement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1487, 637);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnBackToMainMenu);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dgvAchievement);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.ClientSize = new System.Drawing.Size(1509, 679);
+            this.Controls.Add(this.panel6);
             this.Name = "frmAchievement";
+            this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "frmAchievement";
             this.Load += new System.EventHandler(this.frmAchievement_Load);
             this.groupBox2.ResumeLayout(false);
@@ -262,8 +347,10 @@ namespace JKSApp.Presentation_Layer
             this.groupBox1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAchievement)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -275,7 +362,6 @@ namespace JKSApp.Presentation_Layer
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnSearchGrading;
         private System.Windows.Forms.TextBox txtSearchGrading;
-        private System.Windows.Forms.Button btnBackToMainMenu;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnLast;
         private System.Windows.Forms.Button btnNext;
@@ -284,10 +370,12 @@ namespace JKSApp.Presentation_Layer
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ListView lvMembers;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnDeleteGrading;
-        private System.Windows.Forms.Button btnUpdateGrading;
-        private System.Windows.Forms.Button btnNewGrading;
         private System.Windows.Forms.DataGridView dgvAchievement;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.ColumnHeader MemberFirstName;
+        private System.Windows.Forms.ColumnHeader MemberLastName;
     }
 }

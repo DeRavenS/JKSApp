@@ -13,38 +13,69 @@ namespace JKSApp.Presentation_Layer
 {
     public partial class frmCreateDojo : Form
     {
-        frmDojo frmdojo = new frmDojo();
-        public frmCreateDojo()
+        CU operation;
+        Dojo doj = null;
+        public frmCreateDojo(CU op)
         {
             InitializeComponent();
+            operation = op;
         }
-        public frmCreateDojo(frmDojo frm)
+        public frmCreateDojo(CU op,Object dojo)
         {
             InitializeComponent();
-            frmdojo = frm;
+            operation = op;
+            doj = dojo as Dojo;
         }
+
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            Dojo dojo = new Dojo(txtName.Text,txtStreet.Text,txtSubUrb.Text,txtCity.Text,txtProvince.Text,txtCountry.Text,true);
-            DatabaseOperation operation = new DatabaseOperation();
-            if (dojo.insertDojo())
+            if (operation==CU.Insert)
             {
-                MessageBox.Show("Insert Succesful");
-                frmdojo.Enabled = true;
-                Close();
+                Dojo dojo = new Dojo(txtName.Text, txtStreet.Text, txtSubUrb.Text, txtCity.Text, txtProvince.Text, txtCountry.Text, true);
+                if (dojo.insertDojo())
+                {                   
+                    Close();
+                }
             }
+            else
+            {
+                doj.City = txtCity.Text;
+                doj.Country=txtCountry.Text;
+                doj.Name = txtName.Text;
+                doj.Province=txtProvince.Text ;
+                doj.Street =txtStreet.Text;
+                doj.Suburb =txtSubUrb.Text;
+                if (doj.updateDojo())
+                {
+                    Close();
+                }
+                
+            }
+            
         }
 
         private void frmCreateDojo_Load(object sender, EventArgs e)
         {
-
+            if (doj!=null)
+            {
+                txtCity.Text = doj.City;
+                txtCountry.Text = doj.Country;
+                txtName.Text = doj.Name;
+                txtProvince.Text = doj.Province;
+                txtStreet.Text = doj.Street;
+                txtSubUrb.Text = doj.Suburb;              
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
-        {
-            frmdojo.Enabled = true;
+        {          
             Close();
+        }
+
+        private void txtStreet_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

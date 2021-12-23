@@ -13,7 +13,7 @@ namespace JKSApp.Presentation_Layer
 {
     public partial class frmQualification : Form
     {
-        BindingSource source = new BindingSource();
+        
         Qualification qual = new Qualification();
         public frmQualification()
         {
@@ -29,8 +29,32 @@ namespace JKSApp.Presentation_Layer
 
         private void frmQualification_Load(object sender, EventArgs e)
         {
-            source.DataSource = qual.getAll();
-            dgvQualification.DataSource = source;
+            StaticBindingSource.source.DataSource = qual.getAll();
+            dgvQualification.DataSource = StaticBindingSource.source;
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDisplayAll_Click(object sender, EventArgs e)
+        {
+            StaticBindingSource.source.DataSource = qual.getAll();
+            dgvQualification.DataSource = StaticBindingSource.source;
+        }
+
+        
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvQualification_SelectionChanged(object sender, EventArgs e)
+        {
+            Display dis = new Display();
+            dis.qualificationListView(lvMembers);
         }
     }
 }

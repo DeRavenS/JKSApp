@@ -36,5 +36,17 @@ namespace JKSApp.BusinessLayer
 
             return lbelt;
         }
+
+        public List<Belt> Search(string srch)
+        {
+            DatabaseOperation databaseOperation = new DatabaseOperation();
+            List<Belt> lbelt = new List<Belt>();
+            foreach (Belt belt in databaseOperation.search("Belt", $"BeltName", $"'%{srch}%'", ObjectType.belt))
+            {
+                lbelt.Add(belt);
+            }
+
+            return lbelt;
+        }
     }
 }

@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using JKSApp.DataLayer;
+using System.Data;
 
 namespace JKSApp.BusinessLayer
 {
-    class Category
+    class Category:table
     {
         int categoryID;
         string categoryDescription;
@@ -35,6 +36,25 @@ namespace JKSApp.BusinessLayer
             }
 
             return lcat;
+        }
+
+        public DataTable getCategoryMembers()
+        {
+            DataHandler dh = new DataHandler();
+            return dh.CategoryMembers(CategoryID.ToString());
+        }
+        public override void openInsertForm(CU op)
+        {
+            
+        }
+        public override void DeleteItem()
+        {
+            
+        }
+
+        public override void openUpdateForm(object obj)
+        {
+            
         }
     }
 }

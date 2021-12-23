@@ -29,90 +29,100 @@ namespace JKSApp.Presentation_Layer
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnDisplayAllEvent = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSearchEvent = new System.Windows.Forms.Button();
             this.txtSearchEvent = new System.Windows.Forms.TextBox();
-            this.btnBackToMainMenu = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnLast = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnFirst = new System.Windows.Forms.Button();
             this.btnPrevious = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnDeleteEvent = new System.Windows.Forms.Button();
-            this.btnUpdateEvent = new System.Windows.Forms.Button();
-            this.btnNewEvent = new System.Windows.Forms.Button();
-            this.dgvEvent = new System.Windows.Forms.DataGridView();
             this.lvMembers = new System.Windows.Forms.ListView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dgvEvent = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.MemberFirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.MemberLastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEvent)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnDisplayAllEvent);
-            this.groupBox2.Location = new System.Drawing.Point(273, 12);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            this.groupBox2.Location = new System.Drawing.Point(0, 540);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1040, 48);
+            this.groupBox2.Size = new System.Drawing.Size(254, 60);
             this.groupBox2.TabIndex = 28;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Filters";
             // 
             // btnDisplayAllEvent
             // 
-            this.btnDisplayAllEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDisplayAllEvent.Location = new System.Drawing.Point(6, 12);
+            this.btnDisplayAllEvent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnDisplayAllEvent.FlatAppearance.BorderSize = 0;
+            this.btnDisplayAllEvent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            this.btnDisplayAllEvent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDisplayAllEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDisplayAllEvent.ForeColor = System.Drawing.Color.Snow;
+            this.btnDisplayAllEvent.Location = new System.Drawing.Point(6, 17);
             this.btnDisplayAllEvent.Name = "btnDisplayAllEvent";
-            this.btnDisplayAllEvent.Size = new System.Drawing.Size(183, 30);
+            this.btnDisplayAllEvent.Size = new System.Drawing.Size(235, 34);
             this.btnDisplayAllEvent.TabIndex = 12;
             this.btnDisplayAllEvent.Text = "Display All Events";
-            this.btnDisplayAllEvent.UseVisualStyleBackColor = true;
+            this.btnDisplayAllEvent.UseVisualStyleBackColor = false;
             this.btnDisplayAllEvent.Click += new System.EventHandler(this.btnDisplayAllEvent_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnSearchEvent);
             this.groupBox1.Controls.Add(this.txtSearchEvent);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(259, 48);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.groupBox1.Size = new System.Drawing.Size(254, 50);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search Event";
             // 
             // btnSearchEvent
             // 
-            this.btnSearchEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchEvent.Location = new System.Drawing.Point(166, 12);
+            this.btnSearchEvent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnSearchEvent.FlatAppearance.BorderSize = 0;
+            this.btnSearchEvent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            this.btnSearchEvent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchEvent.ForeColor = System.Drawing.Color.Snow;
+            this.btnSearchEvent.Location = new System.Drawing.Point(166, 17);
             this.btnSearchEvent.Name = "btnSearchEvent";
             this.btnSearchEvent.Size = new System.Drawing.Size(87, 30);
             this.btnSearchEvent.TabIndex = 13;
             this.btnSearchEvent.Text = "Search";
-            this.btnSearchEvent.UseVisualStyleBackColor = true;
+            this.btnSearchEvent.UseVisualStyleBackColor = false;
             // 
             // txtSearchEvent
             // 
             this.txtSearchEvent.Location = new System.Drawing.Point(6, 19);
             this.txtSearchEvent.Name = "txtSearchEvent";
-            this.txtSearchEvent.Size = new System.Drawing.Size(154, 20);
+            this.txtSearchEvent.Size = new System.Drawing.Size(154, 26);
             this.txtSearchEvent.TabIndex = 11;
-            // 
-            // btnBackToMainMenu
-            // 
-            this.btnBackToMainMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackToMainMenu.Location = new System.Drawing.Point(1238, 605);
-            this.btnBackToMainMenu.Name = "btnBackToMainMenu";
-            this.btnBackToMainMenu.Size = new System.Drawing.Size(75, 32);
-            this.btnBackToMainMenu.TabIndex = 26;
-            this.btnBackToMainMenu.Text = "Back";
-            this.btnBackToMainMenu.UseVisualStyleBackColor = true;
-            this.btnBackToMainMenu.Click += new System.EventHandler(this.btnBackToMainMenu_Click);
             // 
             // panel3
             // 
@@ -121,128 +131,187 @@ namespace JKSApp.Presentation_Layer
             this.panel3.Controls.Add(this.btnNext);
             this.panel3.Controls.Add(this.btnFirst);
             this.panel3.Controls.Add(this.btnPrevious);
-            this.panel3.Location = new System.Drawing.Point(273, 566);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel3.Location = new System.Drawing.Point(264, 549);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1040, 33);
+            this.panel3.Size = new System.Drawing.Size(985, 51);
             this.panel3.TabIndex = 25;
             // 
             // btnLast
             // 
-            this.btnLast.Location = new System.Drawing.Point(964, 3);
+            this.btnLast.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnLast.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnLast.FlatAppearance.BorderSize = 0;
+            this.btnLast.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            this.btnLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLast.ForeColor = System.Drawing.Color.Snow;
+            this.btnLast.Location = new System.Drawing.Point(833, 0);
             this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(75, 23);
+            this.btnLast.Size = new System.Drawing.Size(75, 49);
             this.btnLast.TabIndex = 5;
             this.btnLast.Text = ">>";
-            this.btnLast.UseVisualStyleBackColor = true;
+            this.btnLast.UseVisualStyleBackColor = false;
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(883, 3);
+            this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnNext.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnNext.FlatAppearance.BorderSize = 0;
+            this.btnNext.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.ForeColor = System.Drawing.Color.Snow;
+            this.btnNext.Location = new System.Drawing.Point(908, 0);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(75, 23);
+            this.btnNext.Size = new System.Drawing.Size(75, 49);
             this.btnNext.TabIndex = 6;
             this.btnNext.Text = ">";
-            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.UseVisualStyleBackColor = false;
             // 
             // btnFirst
             // 
-            this.btnFirst.Location = new System.Drawing.Point(3, 3);
+            this.btnFirst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnFirst.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnFirst.FlatAppearance.BorderSize = 0;
+            this.btnFirst.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            this.btnFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFirst.ForeColor = System.Drawing.Color.Snow;
+            this.btnFirst.Location = new System.Drawing.Point(75, 0);
             this.btnFirst.Name = "btnFirst";
-            this.btnFirst.Size = new System.Drawing.Size(75, 23);
+            this.btnFirst.Size = new System.Drawing.Size(75, 49);
             this.btnFirst.TabIndex = 3;
             this.btnFirst.Text = "<<";
-            this.btnFirst.UseVisualStyleBackColor = true;
+            this.btnFirst.UseVisualStyleBackColor = false;
             // 
             // btnPrevious
             // 
-            this.btnPrevious.Location = new System.Drawing.Point(84, 3);
+            this.btnPrevious.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnPrevious.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnPrevious.FlatAppearance.BorderSize = 0;
+            this.btnPrevious.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            this.btnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrevious.ForeColor = System.Drawing.Color.Snow;
+            this.btnPrevious.Location = new System.Drawing.Point(0, 0);
             this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(75, 23);
+            this.btnPrevious.Size = new System.Drawing.Size(75, 49);
             this.btnPrevious.TabIndex = 4;
             this.btnPrevious.Text = "<";
-            this.btnPrevious.UseVisualStyleBackColor = true;
+            this.btnPrevious.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.lvMembers);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btnDeleteEvent);
-            this.panel1.Controls.Add(this.btnUpdateEvent);
-            this.panel1.Controls.Add(this.btnNewEvent);
-            this.panel1.Location = new System.Drawing.Point(6, 66);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 50);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(265, 533);
+            this.panel1.Size = new System.Drawing.Size(254, 490);
             this.panel1.TabIndex = 24;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(68, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 13);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Members Participated";
-            // 
-            // btnDeleteEvent
-            // 
-            this.btnDeleteEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteEvent.Location = new System.Drawing.Point(11, 496);
-            this.btnDeleteEvent.Name = "btnDeleteEvent";
-            this.btnDeleteEvent.Size = new System.Drawing.Size(243, 30);
-            this.btnDeleteEvent.TabIndex = 14;
-            this.btnDeleteEvent.Text = "Delete Event";
-            this.btnDeleteEvent.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdateEvent
-            // 
-            this.btnUpdateEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateEvent.Location = new System.Drawing.Point(11, 460);
-            this.btnUpdateEvent.Name = "btnUpdateEvent";
-            this.btnUpdateEvent.Size = new System.Drawing.Size(243, 30);
-            this.btnUpdateEvent.TabIndex = 12;
-            this.btnUpdateEvent.Text = "Edit Selected Event";
-            this.btnUpdateEvent.UseVisualStyleBackColor = true;
-            // 
-            // btnNewEvent
-            // 
-            this.btnNewEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewEvent.Location = new System.Drawing.Point(11, 424);
-            this.btnNewEvent.Name = "btnNewEvent";
-            this.btnNewEvent.Size = new System.Drawing.Size(243, 30);
-            this.btnNewEvent.TabIndex = 9;
-            this.btnNewEvent.Text = "Add new Event";
-            this.btnNewEvent.UseVisualStyleBackColor = true;
-            // 
-            // dgvEvent
-            // 
-            this.dgvEvent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEvent.Location = new System.Drawing.Point(273, 66);
-            this.dgvEvent.Name = "dgvEvent";
-            this.dgvEvent.Size = new System.Drawing.Size(1040, 498);
-            this.dgvEvent.TabIndex = 23;
             // 
             // lvMembers
             // 
+            this.lvMembers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.MemberFirstName,
+            this.MemberLastName});
+            this.lvMembers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvMembers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvMembers.HideSelection = false;
-            this.lvMembers.Location = new System.Drawing.Point(11, 33);
+            this.lvMembers.Location = new System.Drawing.Point(0, 20);
             this.lvMembers.Name = "lvMembers";
-            this.lvMembers.Size = new System.Drawing.Size(247, 331);
+            this.lvMembers.Size = new System.Drawing.Size(254, 470);
             this.lvMembers.TabIndex = 29;
             this.lvMembers.UseCompatibleStateImageBehavior = false;
+            this.lvMembers.View = System.Windows.Forms.View.Details;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(254, 20);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Participants";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dgvEvent
+            // 
+            this.dgvEvent.AllowUserToAddRows = false;
+            this.dgvEvent.AllowUserToDeleteRows = false;
+            this.dgvEvent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvEvent.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.dgvEvent.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvEvent.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvEvent.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEvent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvEvent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEvent.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvEvent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvEvent.EnableHeadersVisualStyles = false;
+            this.dgvEvent.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.dgvEvent.Location = new System.Drawing.Point(264, 0);
+            this.dgvEvent.Name = "dgvEvent";
+            this.dgvEvent.RowHeadersVisible = false;
+            this.dgvEvent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEvent.Size = new System.Drawing.Size(985, 549);
+            this.dgvEvent.TabIndex = 23;
+            this.dgvEvent.SelectionChanged += new System.EventHandler(this.dgvEvent_SelectionChanged);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.panel1);
+            this.panel2.Controls.Add(this.groupBox2);
+            this.panel2.Controls.Add(this.groupBox1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.panel2.Size = new System.Drawing.Size(264, 600);
+            this.panel2.TabIndex = 29;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.dgvEvent);
+            this.panel4.Controls.Add(this.panel3);
+            this.panel4.Controls.Add(this.panel2);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(10, 10);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1249, 600);
+            this.panel4.TabIndex = 30;
+            // 
+            // MemberFirstName
+            // 
+            this.MemberFirstName.Text = "First Name";
+            // 
+            // MemberLastName
+            // 
+            this.MemberLastName.Text = "Last Name";
             // 
             // frmEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1344, 642);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnBackToMainMenu);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dgvEvent);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.ClientSize = new System.Drawing.Size(1269, 620);
+            this.Controls.Add(this.panel4);
             this.Name = "frmEvent";
+            this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "frmEvent";
             this.Load += new System.EventHandler(this.frmEvent_Load);
             this.groupBox2.ResumeLayout(false);
@@ -250,8 +319,9 @@ namespace JKSApp.Presentation_Layer
             this.groupBox1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEvent)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -263,7 +333,6 @@ namespace JKSApp.Presentation_Layer
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnSearchEvent;
         private System.Windows.Forms.TextBox txtSearchEvent;
-        private System.Windows.Forms.Button btnBackToMainMenu;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnLast;
         private System.Windows.Forms.Button btnNext;
@@ -272,9 +341,10 @@ namespace JKSApp.Presentation_Layer
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ListView lvMembers;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnDeleteEvent;
-        private System.Windows.Forms.Button btnUpdateEvent;
-        private System.Windows.Forms.Button btnNewEvent;
         private System.Windows.Forms.DataGridView dgvEvent;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.ColumnHeader MemberFirstName;
+        private System.Windows.Forms.ColumnHeader MemberLastName;
     }
 }

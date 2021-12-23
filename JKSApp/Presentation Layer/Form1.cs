@@ -31,7 +31,7 @@ namespace JKSApp
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Close();
+            Application.Exit();
         }
 
         private void btnContinue_Click(object sender, EventArgs e)

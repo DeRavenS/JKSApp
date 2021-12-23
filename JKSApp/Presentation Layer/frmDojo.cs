@@ -13,19 +13,13 @@ namespace JKSApp.Presentation_Layer
 {
     public partial class frmDojo : Form
     {
-        BindingSource source = new BindingSource();
-        
+       
+       
         public frmDojo()
         {
             InitializeComponent();
-        }
-
-        private void btnBackToMainMenu_Click(object sender, EventArgs e)
-        {
-            frmMainMenu frm = new frmMainMenu();
-            frm.Show();
-            Hide();
-        }
+            Dojo dojo = new Dojo();                  
+        }      
 
         private void btnSearchDojo_Click(object sender, EventArgs e)
         {
@@ -35,27 +29,26 @@ namespace JKSApp.Presentation_Layer
         private void frmDojo_Load(object sender, EventArgs e)
         {
             Dojo dojo = new Dojo();
-            source.DataSource = dojo.getDojo();
-            dgvDojo.DataSource = source;
-            dgvDojo.Columns["DojoID"].Visible = false;
+            StaticBindingSource.source.DataSource = dojo.getDojo();
+            dgvDojo.DataSource = StaticBindingSource.source;
+            dgvDojo.Columns["DojoID"].Visible = false;         
         }
-
-        private void btnNewDojo_Click(object sender, EventArgs e)
-        {
-            frmCreateDojo frm = new frmCreateDojo(this);
-            frm.Show();
-            this.Enabled = false;
-        }
-
+       
         private void btnNewDojo_EnabledChanged(object sender, EventArgs e)
         {
             if (Enabled)
             {
                 Dojo dojo = new Dojo();
-                source.DataSource = dojo.getDojo();
-                dgvDojo.DataSource = source;
+                StaticBindingSource.source.DataSource = dojo.getDojo();
+                dgvDojo.DataSource = StaticBindingSource.source;
                 dgvDojo.Columns["DojoID"].Visible = false;
             }
+        }
+
+        private void dgvDojo_SelectionChanged(object sender, EventArgs e)
+        {
+            Display dis = new Display();
+            dis.dojoListView(lvMembers);
         }
     }
 }

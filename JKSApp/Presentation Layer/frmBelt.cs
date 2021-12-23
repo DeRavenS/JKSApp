@@ -38,5 +38,17 @@ namespace JKSApp.Presentation_Layer
             source.DataSource = belt.getAll();
             dgvBelt.DataSource = source;
         }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            source.MoveNext();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            Belt b = new Belt();
+            source.DataSource = b.Search(txtSearchBelt.Text);
+            dgvBelt.DataSource = source;
+        }
     }
 }

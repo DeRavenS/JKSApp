@@ -14,7 +14,7 @@ namespace JKSApp.Presentation_Layer
     public partial class frmGrading : Form
     {
         Grading grade = new Grading();
-        BindingSource source = new BindingSource();
+        
         public frmGrading()
         {
             InitializeComponent();
@@ -22,14 +22,14 @@ namespace JKSApp.Presentation_Layer
 
         private void frmGrading_Load(object sender, EventArgs e)
         {
-            source.DataSource = grade.getGrading();
-            dgvGrading.DataSource = source;
+           StaticBindingSource.source.DataSource = grade.getGrading();
+            dgvGrading.DataSource = StaticBindingSource.source;
         }
 
         private void btnDisplayAllGrading_Click(object sender, EventArgs e)
         {
-            source.DataSource = grade.getGrading();
-            dgvGrading.DataSource = source;
+            StaticBindingSource.source.DataSource = grade.getGrading();
+            dgvGrading.DataSource = StaticBindingSource.source;
         }
 
         private void btnBackToMainMenu_Click(object sender, EventArgs e)
@@ -37,6 +37,12 @@ namespace JKSApp.Presentation_Layer
             frmMainMenu frm = new frmMainMenu();
             frm.Show();
             Close();
+        }
+
+        private void dgvGrading_SelectionChanged(object sender, EventArgs e)
+        {
+            Display dis = new Display();
+            dis.gradingListView(lvMembers);
         }
     }
 }

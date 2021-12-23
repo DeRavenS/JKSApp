@@ -4,10 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using JKSApp.DataLayer;
+using JKSApp.Presentation_Layer;
+using System.Windows.Forms;
+using System.Data;
 
 namespace JKSApp.BusinessLayer
 {
-    class Dojo
+    class Dojo:table
     {
         DatabaseOperation operation = new DatabaseOperation();
         DataHandler dh = new DataHandler();
@@ -55,10 +58,21 @@ namespace JKSApp.BusinessLayer
         {
             if (operation.InsertData("Dojo(DojoName,DojoStreet,DojoSuburb,DojoCity,DojoProvince,DojoCountry,Active)", $"'{Name}','{Street}','{Suburb}','{City}','{Province}','{Country}',{active}"))
             {
+                MessageBox.Show("Insert Succesful");
                 return true;
             }
             else return false;
         }
+        public bool updateDojo()
+        {
+            if (dh.UpdateItem("Dojo", $"DojoName='{Name}',DojoStreet='{Street}',DojoSuburb='{Suburb}',DojoCity='{City}',DojoProvince='{Province}',DojoCountry='{Country}',Active={active}",DojoID.ToString()))
+            {
+                MessageBox.Show("Update Succesful");
+                return true;
+            }
+            else return false;
+        }
+
 
         public List<Dojo> getDojo()
         {
@@ -69,6 +83,40 @@ namespace JKSApp.BusinessLayer
                 ldojo.Add(item as Dojo);
             }
             return ldojo;
+        }
+
+        public DataTable getDojoMembers()
+        {
+            DataHandler dh = new DataHandler();
+            return dh.DojoMembers(DojoID.ToString());
+        }
+
+        public override void openInsertForm(CU op)
+        {
+            frmCreateDojo frmaddDojo = new frmCreateDojo(CU.Insert);
+            frmaddDojo.Show();
+        }
+
+        public override void openUpdateForm(Object obj)
+        {
+            frmCreateDojo frmaddDojo = new frmCreateDojo(CU.Update,obj);
+            frmaddDojo.Show();
+        }
+        public override void DeleteItem()
+        {
+            DataHandler dh = new DataHandler();
+            DialogResult dr = MessageBox.Show($"Are you sure you want to delete {Name} and all its associated entries and members from the database?", "Confirm", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                if (dh.DeleteItem("Member", $"DojoID={DojoID}") && dh.DeleteItem("Dojo", $"DojoID={DojoID}"))
+                {
+                    MessageBox.Show("Delete Operation successful");
+                }
+                else
+                {
+                    MessageBox.Show("Could not delete all entries");
+                }
+            }
         }
     }
 }

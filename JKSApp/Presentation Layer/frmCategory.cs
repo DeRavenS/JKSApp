@@ -14,7 +14,7 @@ namespace JKSApp.Presentation_Layer
     public partial class frmCategory : Form
     {
         Category cat = new Category();
-        BindingSource source = new BindingSource();
+        
         public frmCategory()
         {
             InitializeComponent();
@@ -22,14 +22,27 @@ namespace JKSApp.Presentation_Layer
 
         private void frmCategorycs_Load(object sender, EventArgs e)
         {
-            source.DataSource = cat.getAll();
-            dgvCategory.DataSource = source;
+            StaticBindingSource.source.DataSource = cat.getAll();
+            dgvCategory.DataSource = StaticBindingSource.source;
         }
 
         private void btnDisplayAll_Click(object sender, EventArgs e)
         {
-            source.DataSource = cat.getAll();
-            dgvCategory.DataSource = source;
+            StaticBindingSource.source.DataSource = cat.getAll();
+            dgvCategory.DataSource = StaticBindingSource.source;
+        }
+
+        private void btnBackToMainMenu_Click(object sender, EventArgs e)
+        {
+            frmMainMenu frm = new frmMainMenu();
+            frm.Show();
+            Close();
+        }
+
+        private void dgvCategory_SelectionChanged(object sender, EventArgs e)
+        {
+            Display dis = new Display();
+            dis.categoryListView(lvMembers);
         }
     }
 }

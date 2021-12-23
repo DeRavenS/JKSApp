@@ -14,7 +14,7 @@ namespace JKSApp.Presentation_Layer
     public partial class frmEvent : Form
     {
         Event ev = new Event();
-        BindingSource source = new BindingSource();
+        
         public frmEvent()
         {
             InitializeComponent();
@@ -22,14 +22,14 @@ namespace JKSApp.Presentation_Layer
 
         private void frmEvent_Load(object sender, EventArgs e)
         {
-            source.DataSource = ev.getEvents();
-            dgvEvent.DataSource = source;
+           StaticBindingSource.source.DataSource = ev.getEvents();
+            dgvEvent.DataSource = StaticBindingSource.source;
         }
 
         private void btnDisplayAllEvent_Click(object sender, EventArgs e)
         {
-            source.DataSource = ev.getEvents();
-            dgvEvent.DataSource = source;
+            StaticBindingSource.source.DataSource = ev.getEvents();
+            dgvEvent.DataSource = StaticBindingSource.source;
         }
 
         private void btnBackToMainMenu_Click(object sender, EventArgs e)
@@ -37,6 +37,12 @@ namespace JKSApp.Presentation_Layer
             frmMainMenu frm = new frmMainMenu();
             frm.Show();
             Hide();
+        }
+
+        private void dgvEvent_SelectionChanged(object sender, EventArgs e)
+        {
+            Display dis = new Display();
+            dis.eventListView(lvMembers);
         }
     }
 }

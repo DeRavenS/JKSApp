@@ -29,251 +29,281 @@ namespace JKSApp.Presentation_Layer
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnDisplayAll = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnBackToMainMenu = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnLast = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
-            this.btnFirst = new System.Windows.Forms.Button();
+            this.btnLast = new System.Windows.Forms.Button();
             this.btnPrevious = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lvMembers = new System.Windows.Forms.ListView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnNew = new System.Windows.Forms.Button();
+            this.btnFirst = new System.Windows.Forms.Button();
             this.dgvQualification = new System.Windows.Forms.DataGridView();
-            this.groupBox2.SuspendLayout();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lvMembers = new System.Windows.Forms.ListView();
+            this.MemberFirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.MemberLastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQualification)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.btnDisplayAll);
-            this.groupBox2.Location = new System.Drawing.Point(273, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1040, 48);
-            this.groupBox2.TabIndex = 58;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Filters";
             // 
             // btnDisplayAll
             // 
-            this.btnDisplayAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDisplayAll.Location = new System.Drawing.Point(6, 12);
+            this.btnDisplayAll.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnDisplayAll.FlatAppearance.BorderSize = 0;
+            this.btnDisplayAll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            this.btnDisplayAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDisplayAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDisplayAll.ForeColor = System.Drawing.Color.Snow;
+            this.btnDisplayAll.Location = new System.Drawing.Point(0, 598);
             this.btnDisplayAll.Name = "btnDisplayAll";
-            this.btnDisplayAll.Size = new System.Drawing.Size(183, 30);
+            this.btnDisplayAll.Padding = new System.Windows.Forms.Padding(10, 10, 0, 0);
+            this.btnDisplayAll.Size = new System.Drawing.Size(294, 41);
             this.btnDisplayAll.TabIndex = 12;
             this.btnDisplayAll.Text = "Display All Qualifications";
             this.btnDisplayAll.UseVisualStyleBackColor = true;
+            this.btnDisplayAll.Click += new System.EventHandler(this.btnDisplayAll_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Controls.Add(this.txtSearch);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(259, 48);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 3, 10, 10);
+            this.groupBox1.Size = new System.Drawing.Size(294, 48);
             this.groupBox1.TabIndex = 57;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search Qualification";
             // 
             // btnSearch
             // 
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(166, 12);
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.Snow;
+            this.btnSearch.Location = new System.Drawing.Point(211, 15);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(87, 30);
             this.btnSearch.TabIndex = 13;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearch
             // 
             this.txtSearch.Location = new System.Drawing.Point(6, 19);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(154, 20);
+            this.txtSearch.Size = new System.Drawing.Size(199, 26);
             this.txtSearch.TabIndex = 11;
-            // 
-            // btnBackToMainMenu
-            // 
-            this.btnBackToMainMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackToMainMenu.Location = new System.Drawing.Point(1238, 605);
-            this.btnBackToMainMenu.Name = "btnBackToMainMenu";
-            this.btnBackToMainMenu.Size = new System.Drawing.Size(75, 32);
-            this.btnBackToMainMenu.TabIndex = 56;
-            this.btnBackToMainMenu.Text = "Back";
-            this.btnBackToMainMenu.UseVisualStyleBackColor = true;
-            this.btnBackToMainMenu.Click += new System.EventHandler(this.btnBackToMainMenu_Click);
             // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.btnLast);
             this.panel3.Controls.Add(this.btnNext);
-            this.panel3.Controls.Add(this.btnFirst);
+            this.panel3.Controls.Add(this.btnLast);
             this.panel3.Controls.Add(this.btnPrevious);
-            this.panel3.Location = new System.Drawing.Point(273, 566);
+            this.panel3.Controls.Add(this.btnFirst);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(314, 608);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1040, 33);
+            this.panel3.Size = new System.Drawing.Size(837, 41);
             this.panel3.TabIndex = 55;
+            // 
+            // btnNext
+            // 
+            this.btnNext.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnNext.FlatAppearance.BorderSize = 0;
+            this.btnNext.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.ForeColor = System.Drawing.Color.Snow;
+            this.btnNext.Location = new System.Drawing.Point(685, 0);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(75, 39);
+            this.btnNext.TabIndex = 6;
+            this.btnNext.Text = ">";
+            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnLast
             // 
-            this.btnLast.Location = new System.Drawing.Point(964, 3);
+            this.btnLast.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnLast.FlatAppearance.BorderSize = 0;
+            this.btnLast.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            this.btnLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLast.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLast.ForeColor = System.Drawing.Color.Snow;
+            this.btnLast.Location = new System.Drawing.Point(760, 0);
             this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(75, 23);
+            this.btnLast.Size = new System.Drawing.Size(75, 39);
             this.btnLast.TabIndex = 5;
             this.btnLast.Text = ">>";
             this.btnLast.UseVisualStyleBackColor = true;
             // 
-            // btnNext
-            // 
-            this.btnNext.Location = new System.Drawing.Point(883, 3);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(75, 23);
-            this.btnNext.TabIndex = 6;
-            this.btnNext.Text = ">";
-            this.btnNext.UseVisualStyleBackColor = true;
-            // 
-            // btnFirst
-            // 
-            this.btnFirst.Location = new System.Drawing.Point(3, 3);
-            this.btnFirst.Name = "btnFirst";
-            this.btnFirst.Size = new System.Drawing.Size(75, 23);
-            this.btnFirst.TabIndex = 3;
-            this.btnFirst.Text = "<<";
-            this.btnFirst.UseVisualStyleBackColor = true;
-            // 
             // btnPrevious
             // 
-            this.btnPrevious.Location = new System.Drawing.Point(84, 3);
+            this.btnPrevious.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnPrevious.FlatAppearance.BorderSize = 0;
+            this.btnPrevious.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            this.btnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrevious.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevious.ForeColor = System.Drawing.Color.Snow;
+            this.btnPrevious.Location = new System.Drawing.Point(75, 0);
             this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(75, 23);
+            this.btnPrevious.Size = new System.Drawing.Size(75, 39);
             this.btnPrevious.TabIndex = 4;
             this.btnPrevious.Text = "<";
             this.btnPrevious.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // btnFirst
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.lvMembers);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btnDelete);
-            this.panel1.Controls.Add(this.btnUpdate);
-            this.panel1.Controls.Add(this.btnNew);
-            this.panel1.Location = new System.Drawing.Point(6, 66);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(265, 533);
-            this.panel1.TabIndex = 54;
-            // 
-            // lvMembers
-            // 
-            this.lvMembers.HideSelection = false;
-            this.lvMembers.Location = new System.Drawing.Point(11, 33);
-            this.lvMembers.Name = "lvMembers";
-            this.lvMembers.Size = new System.Drawing.Size(247, 331);
-            this.lvMembers.TabIndex = 29;
-            this.lvMembers.UseCompatibleStateImageBehavior = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(68, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 13);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Members with Current Qualification";
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(11, 496);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(243, 30);
-            this.btnDelete.TabIndex = 14;
-            this.btnDelete.Text = "Delete Qualification";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(11, 460);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(243, 30);
-            this.btnUpdate.TabIndex = 12;
-            this.btnUpdate.Text = "Edit Selected Qualification";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            // 
-            // btnNew
-            // 
-            this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.Location = new System.Drawing.Point(11, 424);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(243, 30);
-            this.btnNew.TabIndex = 9;
-            this.btnNew.Text = "Add new Qualification";
-            this.btnNew.UseVisualStyleBackColor = true;
+            this.btnFirst.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnFirst.FlatAppearance.BorderSize = 0;
+            this.btnFirst.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            this.btnFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFirst.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFirst.ForeColor = System.Drawing.Color.Snow;
+            this.btnFirst.Location = new System.Drawing.Point(0, 0);
+            this.btnFirst.Name = "btnFirst";
+            this.btnFirst.Size = new System.Drawing.Size(75, 39);
+            this.btnFirst.TabIndex = 3;
+            this.btnFirst.Text = "<<";
+            this.btnFirst.UseVisualStyleBackColor = true;
             // 
             // dgvQualification
             // 
+            this.dgvQualification.AllowUserToAddRows = false;
+            this.dgvQualification.AllowUserToDeleteRows = false;
+            this.dgvQualification.AllowUserToResizeRows = false;
+            this.dgvQualification.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvQualification.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvQualification.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.dgvQualification.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvQualification.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvQualification.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvQualification.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvQualification.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvQualification.Location = new System.Drawing.Point(273, 66);
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvQualification.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvQualification.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvQualification.EnableHeadersVisualStyles = false;
+            this.dgvQualification.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.dgvQualification.Location = new System.Drawing.Point(314, 10);
             this.dgvQualification.Name = "dgvQualification";
-            this.dgvQualification.Size = new System.Drawing.Size(1040, 498);
+            this.dgvQualification.RowHeadersVisible = false;
+            this.dgvQualification.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvQualification.Size = new System.Drawing.Size(837, 598);
             this.dgvQualification.TabIndex = 53;
+            this.dgvQualification.SelectionChanged += new System.EventHandler(this.dgvQualification_SelectionChanged);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.lvMembers);
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.Controls.Add(this.groupBox1);
+            this.panel4.Controls.Add(this.btnDisplayAll);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel4.Location = new System.Drawing.Point(10, 10);
+            this.panel4.Name = "panel4";
+            this.panel4.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.panel4.Size = new System.Drawing.Size(304, 639);
+            this.panel4.TabIndex = 60;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            this.label1.Location = new System.Drawing.Point(0, 48);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(294, 35);
+            this.label1.TabIndex = 61;
+            this.label1.Text = "Qualified members";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lvMembers
+            // 
+            this.lvMembers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.MemberFirstName,
+            this.MemberLastName});
+            this.lvMembers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvMembers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvMembers.HideSelection = false;
+            this.lvMembers.Location = new System.Drawing.Point(0, 83);
+            this.lvMembers.Name = "lvMembers";
+            this.lvMembers.Size = new System.Drawing.Size(294, 515);
+            this.lvMembers.TabIndex = 62;
+            this.lvMembers.UseCompatibleStateImageBehavior = false;
+            this.lvMembers.View = System.Windows.Forms.View.Details;
+            // 
+            // MemberFirstName
+            // 
+            this.MemberFirstName.Text = "FirstName";
+            // 
+            // MemberLastName
+            // 
+            this.MemberLastName.Text = "Last name";
             // 
             // frmQualification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1483, 651);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnBackToMainMenu);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel1);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.ClientSize = new System.Drawing.Size(1161, 659);
             this.Controls.Add(this.dgvQualification);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel4);
             this.Name = "frmQualification";
+            this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "frmQualification";
             this.Load += new System.EventHandler(this.frmQualification_Load);
-            this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQualification)).EndInit();
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnDisplayAll;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Button btnBackToMainMenu;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnLast;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnFirst;
         private System.Windows.Forms.Button btnPrevious;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ListView lvMembers;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.DataGridView dgvQualification;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListView lvMembers;
+        private System.Windows.Forms.ColumnHeader MemberFirstName;
+        private System.Windows.Forms.ColumnHeader MemberLastName;
     }
 }

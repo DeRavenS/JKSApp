@@ -12,7 +12,6 @@ namespace JKSApp.BusinessLayer
     enum ObjectType
     {
         dojo,
-        competition,
         member,
         events,
         achievement,
@@ -24,6 +23,12 @@ namespace JKSApp.BusinessLayer
 
     }
 
+    public enum CU
+    {
+        Insert,
+        Update
+    }
+
     class DatabaseOperation
     {
         DataHandler dh = new DataHandler();
@@ -33,31 +38,32 @@ namespace JKSApp.BusinessLayer
             List<object> lobj = new List<object>();
             if (dh.testCon())
             {
-                OleDbCommand cmd = new OleDbCommand($"Select * from {table} where {criteria} like {srch}", dh.ConString);
+                OleDbCommand cmd = new OleDbCommand($"Select * from {table} where {criteria} like {srch}", dh.Con);             
                 OleDbDataReader reader = cmd.ExecuteReader();
                 using (reader)
                 {                   
                     switch (ot)
                     {    
                         case ObjectType.dojo:
-                            lobj.Add(new Dojo(reader.GetInt32(0),reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5),reader.GetString(6), reader.GetBoolean(7)));
-                            break;
-                        case ObjectType.competition:      
                             while (reader.Read())
-                            {        
-                                lobj.Add(new Competition(reader.GetInt32(0), reader.GetString(1), reader.GetDateTime(2)));
-                            }
+                            {
+                                lobj.Add(new Dojo(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetBoolean(7)));
+                            }                         
                             break;
                         case ObjectType.member:
+                            break;
+                        case ObjectType.belt:
+                            while (reader.Read())
+                            {
+                                lobj.Add(new Belt(reader.GetInt32(0), reader.GetString(1)));
+                            }                           
                             break;
                         default:
                             break;
                     }
                 }
-
-
             }
-            dh.ConString.Close();
+            dh.Con.Close();
             return lobj;
         }
 
@@ -67,7 +73,8 @@ namespace JKSApp.BusinessLayer
             {
                 try
                 {
-                    OleDbCommand cmd = new OleDbCommand($"Insert into {table} Values({values})", dh.ConString);
+                    OleDbCommand cmd = new OleDbCommand($"Insert into {table} Values({values})", dh.Con);
+
                     cmd.ExecuteReader();
                     return true;
                 }
@@ -80,42 +87,55 @@ namespace JKSApp.BusinessLayer
             else
             {
                 MessageBox.Show("Can't connect to database");
-                dh.ConString.Close();
+                dh.Con.Close();
                 return false;
             }
 
         }
 
-        public string CompetitorStats(int MemberID)
+        public string GetEntityName(string table, string ID)
         {
-            DataHandler datah = new DataHandler();
-            List<int[]> lpos = new List<int[]>();
-           
+            if (dh.testCon())
+            {
+                try
+                {
+                    OleDbCommand cmd = new OleDbCommand($"Select * from {table} where {table}ID = {ID}", dh.Con);
+                   
+                    OleDbDataReader reader= cmd.ExecuteReader();
+                    string text = "";
                     try
                     {
-                        lpos = datah.MemberCompetition(MemberID);
-                        if (lpos != null)
+                        while (reader.Read())
                         {
-                            if (lpos.Count != 0)
-                            {
-                                string final = "";
-                                final = $"\tKata\tKumite\tUnison\tTeamKumite\nGold:\t{lpos[0][0]}\t{lpos[1][0]}\t{lpos[2][0]}\t{lpos[3][0]}";
-                                final += $"\nSilver:\t{lpos[0][1]}\t{lpos[1][1]}\t{lpos[2][1]}\t{lpos[3][1]}";
-                                final += $"\nSilver:\t{lpos[0][2]}\t{lpos[1][2]}\t{lpos[2][2]}\t{lpos[3][2]}";
-                               
-                                return final;
-                            }
+                            text = reader.GetString(1);
                         }
-
-
-                        return "Member competed in 0 Competitions";
+                        
+                       
                     }
                     catch (Exception e)
                     {
+
                         MessageBox.Show(e.Message);
-                       
-                        return null;
-                    }          
-        }     
+                    }
+                    return text;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return "";
+                }
+            }
+            else
+            {
+                MessageBox.Show("Can't connect to database");
+                dh.Con.Close();
+                return "";
+            }
+
+        }
+
+        
+
+
     }
 }
