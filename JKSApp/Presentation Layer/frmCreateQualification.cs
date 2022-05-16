@@ -55,5 +55,10 @@ namespace JKSApp.Presentation_Layer
                 txtQualificationName.Text = qualification.QualificationDescription;
             }
         }
+
+        private void frmCreateQualification_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ComponentController.activeForm.Enabled = true;
+        }
     }
 }

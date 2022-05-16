@@ -45,7 +45,7 @@ namespace JKSApp.Presentation_Layer
             this.btnConfirm.ForeColor = System.Drawing.Color.Snow;
             this.btnConfirm.Location = new System.Drawing.Point(0, 135);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(311, 51);
+            this.btnConfirm.Size = new System.Drawing.Size(257, 51);
             this.btnConfirm.TabIndex = 33;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = true;
@@ -61,7 +61,7 @@ namespace JKSApp.Presentation_Layer
             this.btnCancel.ForeColor = System.Drawing.Color.Snow;
             this.btnCancel.Location = new System.Drawing.Point(0, 186);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(311, 51);
+            this.btnCancel.Size = new System.Drawing.Size(257, 51);
             this.btnCancel.TabIndex = 34;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -72,8 +72,9 @@ namespace JKSApp.Presentation_Layer
             this.txtAchievementName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAchievementName.Location = new System.Drawing.Point(28, 35);
             this.txtAchievementName.Name = "txtAchievementName";
-            this.txtAchievementName.Size = new System.Drawing.Size(254, 26);
+            this.txtAchievementName.Size = new System.Drawing.Size(200, 26);
             this.txtAchievementName.TabIndex = 31;
+            this.txtAchievementName.TextChanged += new System.EventHandler(this.txtAchievementName_TextChanged);
             // 
             // lblCompName
             // 
@@ -82,7 +83,7 @@ namespace JKSApp.Presentation_Layer
             this.lblCompName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
             this.lblCompName.Location = new System.Drawing.Point(0, 0);
             this.lblCompName.Name = "lblCompName";
-            this.lblCompName.Size = new System.Drawing.Size(311, 46);
+            this.lblCompName.Size = new System.Drawing.Size(257, 46);
             this.lblCompName.TabIndex = 32;
             this.lblCompName.Text = "Achievement Name:";
             this.lblCompName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -93,7 +94,7 @@ namespace JKSApp.Presentation_Layer
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.ClientSize = new System.Drawing.Size(311, 237);
+            this.ClientSize = new System.Drawing.Size(257, 237);
             this.ControlBox = false;
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.btnCancel);
@@ -102,6 +103,7 @@ namespace JKSApp.Presentation_Layer
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmCreateAchievement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmCreateAchievement_FormClosed);
             this.Load += new System.EventHandler(this.frmCreateAchievement_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

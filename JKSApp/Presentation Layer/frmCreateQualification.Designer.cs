@@ -103,6 +103,7 @@ namespace JKSApp.Presentation_Layer
             this.Name = "frmCreateQualification";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmCreateQualification_FormClosed);
             this.Load += new System.EventHandler(this.frmCreateQualification_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

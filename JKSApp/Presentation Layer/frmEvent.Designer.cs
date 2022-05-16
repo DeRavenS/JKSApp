@@ -29,8 +29,9 @@ namespace JKSApp.Presentation_Layer
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnDisplayAllEvent = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -43,12 +44,17 @@ namespace JKSApp.Presentation_Layer
             this.btnPrevious = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lvMembers = new System.Windows.Forms.ListView();
+            this.MemberFirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.MemberLastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.dgvEvent = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.MemberFirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.MemberLastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cmsEvent = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmSort = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmcbxSort = new System.Windows.Forms.ToolStripComboBox();
+            this.tsmbtnASC = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmbtnDESC = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -56,6 +62,7 @@ namespace JKSApp.Presentation_Layer
             ((System.ComponentModel.ISupportInitialize)(this.dgvEvent)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.cmsEvent.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -116,6 +123,7 @@ namespace JKSApp.Presentation_Layer
             this.btnSearchEvent.TabIndex = 13;
             this.btnSearchEvent.Text = "Search";
             this.btnSearchEvent.UseVisualStyleBackColor = false;
+            this.btnSearchEvent.Click += new System.EventHandler(this.btnSearchEvent_Click);
             // 
             // txtSearchEvent
             // 
@@ -223,6 +231,14 @@ namespace JKSApp.Presentation_Layer
             this.lvMembers.UseCompatibleStateImageBehavior = false;
             this.lvMembers.View = System.Windows.Forms.View.Details;
             // 
+            // MemberFirstName
+            // 
+            this.MemberFirstName.Text = "First Name";
+            // 
+            // MemberLastName
+            // 
+            this.MemberLastName.Text = "Last Name";
+            // 
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -244,23 +260,23 @@ namespace JKSApp.Presentation_Layer
             this.dgvEvent.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvEvent.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvEvent.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEvent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEvent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvEvent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEvent.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEvent.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvEvent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEvent.EnableHeadersVisualStyles = false;
             this.dgvEvent.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
@@ -271,6 +287,7 @@ namespace JKSApp.Presentation_Layer
             this.dgvEvent.Size = new System.Drawing.Size(985, 549);
             this.dgvEvent.TabIndex = 23;
             this.dgvEvent.SelectionChanged += new System.EventHandler(this.dgvEvent_SelectionChanged);
+            this.dgvEvent.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvEvent_MouseDown);
             // 
             // panel2
             // 
@@ -295,13 +312,46 @@ namespace JKSApp.Presentation_Layer
             this.panel4.Size = new System.Drawing.Size(1249, 600);
             this.panel4.TabIndex = 30;
             // 
-            // MemberFirstName
+            // cmsEvent
             // 
-            this.MemberFirstName.Text = "First Name";
+            this.cmsEvent.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmSort});
+            this.cmsEvent.Name = "cmsAchievement";
+            this.cmsEvent.Size = new System.Drawing.Size(96, 26);
             // 
-            // MemberLastName
+            // tsmSort
             // 
-            this.MemberLastName.Text = "Last Name";
+            this.tsmSort.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmcbxSort,
+            this.tsmbtnASC,
+            this.tsmbtnDESC});
+            this.tsmSort.Name = "tsmSort";
+            this.tsmSort.Size = new System.Drawing.Size(95, 22);
+            this.tsmSort.Text = "Sort";
+            this.tsmSort.Click += new System.EventHandler(this.tsmSort_Click);
+            // 
+            // tsmcbxSort
+            // 
+            this.tsmcbxSort.Items.AddRange(new object[] {
+            "EventID",
+            "EventDescription",
+            "EventDate"});
+            this.tsmcbxSort.Name = "tsmcbxSort";
+            this.tsmcbxSort.Size = new System.Drawing.Size(121, 23);
+            // 
+            // tsmbtnASC
+            // 
+            this.tsmbtnASC.Name = "tsmbtnASC";
+            this.tsmbtnASC.Size = new System.Drawing.Size(181, 22);
+            this.tsmbtnASC.Text = "Assending";
+            this.tsmbtnASC.Click += new System.EventHandler(this.tsmbtnASC_Click);
+            // 
+            // tsmbtnDESC
+            // 
+            this.tsmbtnDESC.Name = "tsmbtnDESC";
+            this.tsmbtnDESC.Size = new System.Drawing.Size(181, 22);
+            this.tsmbtnDESC.Text = "Descending";
+            this.tsmbtnDESC.Click += new System.EventHandler(this.tsmbtnDESC_Click);
             // 
             // frmEvent
             // 
@@ -313,7 +363,9 @@ namespace JKSApp.Presentation_Layer
             this.Name = "frmEvent";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "frmEvent";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmEvent_FormClosed);
             this.Load += new System.EventHandler(this.frmEvent_Load);
+            this.EnabledChanged += new System.EventHandler(this.frmEvent_EnabledChanged);
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -322,6 +374,7 @@ namespace JKSApp.Presentation_Layer
             ((System.ComponentModel.ISupportInitialize)(this.dgvEvent)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.cmsEvent.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -346,5 +399,10 @@ namespace JKSApp.Presentation_Layer
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.ColumnHeader MemberFirstName;
         private System.Windows.Forms.ColumnHeader MemberLastName;
+        private System.Windows.Forms.ContextMenuStrip cmsEvent;
+        private System.Windows.Forms.ToolStripMenuItem tsmSort;
+        private System.Windows.Forms.ToolStripComboBox tsmcbxSort;
+        private System.Windows.Forms.ToolStripMenuItem tsmbtnASC;
+        private System.Windows.Forms.ToolStripMenuItem tsmbtnDESC;
     }
 }

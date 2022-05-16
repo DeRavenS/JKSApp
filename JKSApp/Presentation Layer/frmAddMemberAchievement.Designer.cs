@@ -117,8 +117,10 @@ namespace JKSApp.Presentation_Layer
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(299, 220);
+            this.ClientSize = new System.Drawing.Size(292, 255);
+            this.ControlBox = false;
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAddMemberAchievement";
             this.Text = "frmAddMemberAchievement";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmAddMemberAchievement_FormClosed);

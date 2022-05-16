@@ -13,7 +13,7 @@ namespace JKSApp.BusinessLayer
 {
     class ComponentController
     {
-        public Form activeForm = new Form();
+        public static Form activeForm = new Form();
         public static Button activeButton;
         public void GetForm(Form frm, Panel pnl,Button btn)
         {

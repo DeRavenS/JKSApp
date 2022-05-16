@@ -14,22 +14,19 @@ namespace JKSApp.BusinessLayer
     {
         int eventID;
         string eventDescription;
-        DateTime eventDate;
 
         public Event()
         {
         }
 
-        public Event(int eventID, string eventDescription, DateTime eventDate)
+        public Event(int eventID, string eventDescription)
         {
             this.EventID = eventID;
             this.EventDescription = eventDescription;
-            this.EventDate = eventDate;
         }
 
         public int EventID { get => eventID; set => eventID = value; }
         public string EventDescription { get => eventDescription; set => eventDescription = value; }
-        public DateTime EventDate { get => eventDate; set => eventDate = value; }
 
         public List<Event> getEvents()
         {
@@ -62,7 +59,7 @@ namespace JKSApp.BusinessLayer
         public bool InsertEvent()
         {
             DataHandler dh = new DataHandler();
-            if (dh.InsertItem("Event(EventDescription,EventDate)", $"'{EventDescription}','{EventDate}'"))
+            if (dh.InsertItem("Event(EventDescription,EventDate)", $"'{EventDescription}'"))
             {
                 MessageBox.Show("Successfully added Event");
                 return true;
@@ -76,7 +73,7 @@ namespace JKSApp.BusinessLayer
         public bool updateEvent()
         {
             DataHandler dh = new DataHandler();
-            if (dh.UpdateItem("Event", $"EventDescription='{EventDescription}',EventDate='{EventDate}'", EventID.ToString()))
+            if (dh.UpdateItem("Event", $"EventDescription='{EventDescription}'", EventID.ToString()))
             {
                 MessageBox.Show("Event Updated Successfully");
                 return true;
@@ -99,6 +96,18 @@ namespace JKSApp.BusinessLayer
                     MessageBox.Show("Could not delete all entries");
                 }
             }
+        }
+
+        public List<Event> Search(string srch)
+        {
+            DatabaseOperation databaseOperation = new DatabaseOperation();
+            List<Event> lev = new List<Event>();
+            foreach (Event ev in databaseOperation.search("Event", $"EventDescription", $"'%{srch}%'", ObjectType.events))
+            {
+                lev.Add(ev);
+            }
+
+            return lev;
         }
     }
 }

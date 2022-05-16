@@ -129,6 +129,7 @@ namespace JKSApp.Presentation_Layer
             this.Name = "frmCreateGrading";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmCreateGrading_FormClosed);
             this.Load += new System.EventHandler(this.frmCreateGrading_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

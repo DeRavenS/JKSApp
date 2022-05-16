@@ -29,8 +29,9 @@ namespace JKSApp.Presentation_Layer
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnDisplayAllAchievement = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -42,23 +43,29 @@ namespace JKSApp.Presentation_Layer
             this.btnFirst = new System.Windows.Forms.Button();
             this.btnPrevious = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.lvMembers = new System.Windows.Forms.ListView();
+            this.MemberFirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.MemberLastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.dgvAchievement = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.MemberFirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.MemberLastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cmsAchievement = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmSort = new System.Windows.Forms.ToolStripMenuItem();
+            this.tscbxSort = new System.Windows.Forms.ToolStripComboBox();
+            this.tsmbtnASC = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmbtnDESC = new System.Windows.Forms.ToolStripMenuItem();
+            this.dgvAchievement = new System.Windows.Forms.DataGridView();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAchievement)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.cmsAchievement.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAchievement)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -73,7 +80,6 @@ namespace JKSApp.Presentation_Layer
             this.groupBox2.Size = new System.Drawing.Size(277, 56);
             this.groupBox2.TabIndex = 40;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Filters";
             // 
             // btnDisplayAllAchievement
             // 
@@ -118,6 +124,7 @@ namespace JKSApp.Presentation_Layer
             this.btnSearchGrading.TabIndex = 13;
             this.btnSearchGrading.Text = "Search";
             this.btnSearchGrading.UseVisualStyleBackColor = true;
+            this.btnSearchGrading.Click += new System.EventHandler(this.btnSearchGrading_Click);
             // 
             // txtSearchGrading
             // 
@@ -211,18 +218,6 @@ namespace JKSApp.Presentation_Layer
             this.panel1.Size = new System.Drawing.Size(265, 603);
             this.panel1.TabIndex = 36;
             // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
-            this.label1.Location = new System.Drawing.Point(0, 69);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(265, 30);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Members Awarded";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lvMembers
             // 
             this.lvMembers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -240,6 +235,27 @@ namespace JKSApp.Presentation_Layer
             this.lvMembers.UseCompatibleStateImageBehavior = false;
             this.lvMembers.View = System.Windows.Forms.View.Details;
             // 
+            // MemberFirstName
+            // 
+            this.MemberFirstName.Text = "First Name";
+            this.MemberFirstName.Width = 100;
+            // 
+            // MemberLastName
+            // 
+            this.MemberLastName.Text = "LastName";
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            this.label1.Location = new System.Drawing.Point(0, 69);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(265, 30);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Members Awarded";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // button1
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -254,42 +270,6 @@ namespace JKSApp.Presentation_Layer
             this.button1.TabIndex = 13;
             this.button1.Text = "Award Members";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // dgvAchievement
-            // 
-            this.dgvAchievement.AllowUserToAddRows = false;
-            this.dgvAchievement.AllowUserToDeleteRows = false;
-            this.dgvAchievement.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvAchievement.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.dgvAchievement.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvAchievement.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAchievement.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvAchievement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAchievement.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvAchievement.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvAchievement.EnableHeadersVisualStyles = false;
-            this.dgvAchievement.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.dgvAchievement.Location = new System.Drawing.Point(10, 0);
-            this.dgvAchievement.Name = "dgvAchievement";
-            this.dgvAchievement.RowHeadersVisible = false;
-            this.dgvAchievement.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAchievement.Size = new System.Drawing.Size(1202, 616);
-            this.dgvAchievement.TabIndex = 35;
-            this.dgvAchievement.SelectionChanged += new System.EventHandler(this.dgvAchievement_SelectionChanged);
             // 
             // panel2
             // 
@@ -322,14 +302,82 @@ namespace JKSApp.Presentation_Layer
             this.panel7.Size = new System.Drawing.Size(277, 659);
             this.panel7.TabIndex = 44;
             // 
-            // MemberFirstName
+            // cmsAchievement
             // 
-            this.MemberFirstName.Text = "First Name";
-            this.MemberFirstName.Width = 100;
+            this.cmsAchievement.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmSort});
+            this.cmsAchievement.Name = "cmsAchievement";
+            this.cmsAchievement.Size = new System.Drawing.Size(96, 26);
             // 
-            // MemberLastName
+            // tsmSort
             // 
-            this.MemberLastName.Text = "LastName";
+            this.tsmSort.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tscbxSort,
+            this.tsmbtnASC,
+            this.tsmbtnDESC});
+            this.tsmSort.Name = "tsmSort";
+            this.tsmSort.Size = new System.Drawing.Size(95, 22);
+            this.tsmSort.Text = "Sort";
+            this.tsmSort.Click += new System.EventHandler(this.tsmSort_Click);
+            // 
+            // tscbxSort
+            // 
+            this.tscbxSort.Items.AddRange(new object[] {
+            "AchievementID",
+            "AchievementDescription"});
+            this.tscbxSort.Name = "tscbxSort";
+            this.tscbxSort.Size = new System.Drawing.Size(121, 23);
+            // 
+            // tsmbtnASC
+            // 
+            this.tsmbtnASC.Name = "tsmbtnASC";
+            this.tsmbtnASC.Size = new System.Drawing.Size(181, 22);
+            this.tsmbtnASC.Text = "Assending";
+            this.tsmbtnASC.Click += new System.EventHandler(this.assendingToolStripMenuItem_Click);
+            // 
+            // tsmbtnDESC
+            // 
+            this.tsmbtnDESC.Name = "tsmbtnDESC";
+            this.tsmbtnDESC.Size = new System.Drawing.Size(181, 22);
+            this.tsmbtnDESC.Text = "Descending";
+            this.tsmbtnDESC.Click += new System.EventHandler(this.tsmbtnDESC_Click);
+            // 
+            // dgvAchievement
+            // 
+            this.dgvAchievement.AllowUserToAddRows = false;
+            this.dgvAchievement.AllowUserToDeleteRows = false;
+            this.dgvAchievement.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvAchievement.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.dgvAchievement.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvAchievement.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAchievement.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvAchievement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAchievement.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvAchievement.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvAchievement.EnableHeadersVisualStyles = false;
+            this.dgvAchievement.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.dgvAchievement.Location = new System.Drawing.Point(10, 0);
+            this.dgvAchievement.Name = "dgvAchievement";
+            this.dgvAchievement.RowHeadersVisible = false;
+            this.dgvAchievement.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAchievement.Size = new System.Drawing.Size(1202, 616);
+            this.dgvAchievement.TabIndex = 35;
+            this.dgvAchievement.SelectionChanged += new System.EventHandler(this.dgvAchievement_SelectionChanged);
+            this.dgvAchievement.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvAchievement_MouseDown);
             // 
             // frmAchievement
             // 
@@ -342,15 +390,17 @@ namespace JKSApp.Presentation_Layer
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "frmAchievement";
             this.Load += new System.EventHandler(this.frmAchievement_Load);
+            this.EnabledChanged += new System.EventHandler(this.frmAchievement_EnabledChanged);
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAchievement)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
+            this.cmsAchievement.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAchievement)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -370,12 +420,17 @@ namespace JKSApp.Presentation_Layer
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ListView lvMembers;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgvAchievement;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.ColumnHeader MemberFirstName;
         private System.Windows.Forms.ColumnHeader MemberLastName;
+        private System.Windows.Forms.ContextMenuStrip cmsAchievement;
+        private System.Windows.Forms.ToolStripMenuItem tsmSort;
+        private System.Windows.Forms.ToolStripComboBox tscbxSort;
+        private System.Windows.Forms.ToolStripMenuItem tsmbtnASC;
+        private System.Windows.Forms.ToolStripMenuItem tsmbtnDESC;
+        private System.Windows.Forms.DataGridView dgvAchievement;
     }
 }

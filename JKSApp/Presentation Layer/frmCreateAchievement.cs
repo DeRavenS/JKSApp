@@ -65,5 +65,15 @@ namespace JKSApp.Presentation_Layer
                 txtAchievementName.Text = achievement.AchievementDescription;
             }
         }
+
+        private void frmCreateAchievement_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ComponentController.activeForm.Enabled = true;
+        }
+
+        private void txtAchievementName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

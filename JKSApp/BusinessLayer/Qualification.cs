@@ -108,5 +108,16 @@ namespace JKSApp.BusinessLayer
                 }
             }
         }
+        public List<Qualification> Search(string srch)
+        {
+            DatabaseOperation databaseOperation = new DatabaseOperation();
+            List<Qualification> lqual = new List<Qualification>();
+            foreach (Qualification qual in databaseOperation.search("Qualification", $"QualificationDescription", $"'%{srch}%'", ObjectType.qualification))
+            {
+                lqual.Add(qual);
+            }
+
+            return lqual;
+        }
     }
 }

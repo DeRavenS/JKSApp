@@ -36,13 +36,12 @@ namespace JKSApp.Presentation_Layer
         {
             if (operation==CU.Insert)
             {
-                Grading grad = new Grading(0, txtGradingName.Text, Convert.ToDateTime(dtpGradingDate.Value.ToString("yyyy/MM/dd")));
+                Grading grad = new Grading(0, txtGradingName.Text);
                 if (grad.InsertGrading()) Close();                                    
             }
             else
             {
-                grading.GradingDescription = txtGradingName.Text;
-                grading.GradingDate = Convert.ToDateTime(dtpGradingDate.Value.ToString("yyyy/MM/dd"));
+                grading.GradingDescription = txtGradingName.Text;              
                 if (grading.updateGrading())
                 {
                     Close();
@@ -60,8 +59,12 @@ namespace JKSApp.Presentation_Layer
             if (grading!=null)
             {
                 txtGradingName.Text = grading.GradingDescription;
-                dtpGradingDate.Value = grading.GradingDate;
             }
+        }
+
+        private void frmCreateGrading_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ComponentController.activeForm.Enabled = true;
         }
     }
 }

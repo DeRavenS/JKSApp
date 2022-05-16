@@ -25,23 +25,6 @@ namespace JKSApp.Presentation_Layer
             mem = m as Member;
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            lbxQualifications.Items.Add(cbxQualifications.Text);
-            cbxQualifications.Items.Remove(cbxQualifications.SelectedItem);
-        }
-
-        private void removeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (lbxQualifications.SelectedItems.Count != 0)
-            {
-                cbxQualifications.Items.Add(lbxQualifications.SelectedItem);
-                lbxQualifications.Items.Remove(lbxQualifications.SelectedItem);
-            }
-            else MessageBox.Show("Please select Item to remove");
-            
-        }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {          
             this.Close();
@@ -51,20 +34,21 @@ namespace JKSApp.Presentation_Layer
         {
             foreach (Qualification item in qual.getAll())
             {
-                if (lbxQualifications.Items.Contains(item.QualificationDescription))
+                if (cbxQualifications.Text == item.QualificationDescription)
                 {
-                    mem.InsertMemberItem(ObjectType.qualification, item.QualificationID.ToString());             
-                }
-               
-            }
-            MessageBox.Show("Insert Successful");
-            this.Close();
-            
+                    if (mem.InsertMemberItem(ObjectType.qualification, $"{item.QualificationID},'{dtpSADate.Value.ToString("yyyy/MM/dd")}','{dtpJAPDate.Value.ToString("yyyy/MM/dd")}'"))
+                    {
+                        MessageBox.Show("Insert Successful");
+                        this.Close();
+                    } 
+                    break;
+                }             
+            }                      
         }
 
         private void frmAddMemberQualification_FormClosed(object sender, FormClosedEventArgs e)
         {
-            frmMember.Enabled = true;
+            ComponentController.activeForm.Enabled = true;
         }
 
         private void frmAddMemberQualification_Load(object sender, EventArgs e)
@@ -76,7 +60,6 @@ namespace JKSApp.Presentation_Layer
                     cbxQualifications.Items.Add(item.QualificationDescription);
                 }
             } 
-
         }
 
         private void lbxQualifications_MouseDown(object sender, MouseEventArgs e)

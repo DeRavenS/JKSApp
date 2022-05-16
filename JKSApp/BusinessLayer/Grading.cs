@@ -13,22 +13,19 @@ namespace JKSApp.BusinessLayer
     {
         int gradingID;
         string gradingDescription;
-        DateTime gradingDate;
         public Grading()
         {
             
         }
 
-        public Grading(int gradingID, string gradingDescription, DateTime gradingDate)
+        public Grading(int gradingID, string gradingDescription)
         {
             this.GradingID = gradingID;
             this.GradingDescription = gradingDescription;
-            this.GradingDate = gradingDate;
         }
 
         public int GradingID { get => gradingID; set => gradingID = value; }
         public string GradingDescription { get => gradingDescription; set => gradingDescription = value; }
-        public DateTime GradingDate { get => gradingDate; set => gradingDate = value; }
 
         public List<Grading> getGrading()
         {
@@ -60,7 +57,7 @@ namespace JKSApp.BusinessLayer
         public bool InsertGrading()
         {
             DataHandler dh = new DataHandler();
-            if (dh.InsertItem("Grading(GradingDescription,GradingDate)", $"'{GradingDescription}','{GradingDate}'"))
+            if (dh.InsertItem("Grading(GradingDescription)", $"'{GradingDescription}'"))
             {
                 MessageBox.Show("Successfully added Grading");
                 return true;
@@ -74,7 +71,7 @@ namespace JKSApp.BusinessLayer
         public bool updateGrading()
         {
             DataHandler dh = new DataHandler();
-            if (dh.UpdateItem("Grading", $"GradingDescription='{GradingDescription}',GradingDate='{GradingDate}'", GradingID.ToString()))
+            if (dh.UpdateItem("Grading", $"GradingDescription='{GradingDescription}'", GradingID.ToString()))
             {
                 MessageBox.Show("Grading Updated Successfully");
                 return true;
@@ -97,6 +94,17 @@ namespace JKSApp.BusinessLayer
                     MessageBox.Show("Could not delete all entries");
                 }
             }
+        }
+        public List<Grading> Search(string srch)
+        {
+            DatabaseOperation databaseOperation = new DatabaseOperation();
+            List<Grading> lgrad = new List<Grading>();
+            foreach (Grading grad in databaseOperation.search("Grading", $"GradingDescription", $"'%{srch}%'", ObjectType.grading))
+            {
+                lgrad.Add(grad);
+            }
+
+            return lgrad;
         }
     }
 }

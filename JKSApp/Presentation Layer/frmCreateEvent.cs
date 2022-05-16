@@ -37,7 +37,6 @@ namespace JKSApp.Presentation_Layer
             if (operation!=CU.Insert)
             {
                 txtEventName.Text = eve.EventDescription;
-                dtpEventDate.Value = eve.EventDate;
             }           
         }
 
@@ -45,19 +44,23 @@ namespace JKSApp.Presentation_Layer
         {
             if (operation==CU.Insert)
             {             
-                Event ev = new Event(0, txtEventName.Text,Convert.ToDateTime(dtpEventDate.Value.ToString("yyyy/MM/dd")));
-                MessageBox.Show(ev.EventDate.ToString());
+                Event ev = new Event(0, txtEventName.Text);
+                
                 if (ev.InsertEvent()) Close();                                
             }
             else
-            {
-                eve.EventDate = Convert.ToDateTime(dtpEventDate.Value.ToString("yyyy/MM/dd"));
+            {                
                 eve.EventDescription = txtEventName.Text;              
                 if (eve.updateEvent())
                 {
                     Close();
                 }
             }
+        }
+
+        private void frmCreateEvent_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ComponentController.activeForm.Enabled = true;
         }
     }
 }

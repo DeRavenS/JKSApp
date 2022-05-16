@@ -29,6 +29,7 @@ namespace JKSApp.Presentation_Layer
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -42,13 +43,18 @@ namespace JKSApp.Presentation_Layer
             this.btnPrevious = new System.Windows.Forms.Button();
             this.btnFirst = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.lvMembers = new System.Windows.Forms.ListView();
+            this.MemberFirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.MemberLastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label1 = new System.Windows.Forms.Label();
             this.dgvGrading = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.MemberFirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.MemberLastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cmsGrading = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmSort = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmcbxSort = new System.Windows.Forms.ToolStripComboBox();
+            this.tsmbtnASC = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmbtnDESC = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -56,6 +62,7 @@ namespace JKSApp.Presentation_Layer
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrading)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.cmsGrading.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -113,6 +120,7 @@ namespace JKSApp.Presentation_Layer
             this.btnSearchGrading.TabIndex = 13;
             this.btnSearchGrading.Text = "Search";
             this.btnSearchGrading.UseVisualStyleBackColor = true;
+            this.btnSearchGrading.Click += new System.EventHandler(this.btnSearchGrading_Click);
             // 
             // txtSearchGrading
             // 
@@ -205,18 +213,6 @@ namespace JKSApp.Presentation_Layer
             this.panel1.Size = new System.Drawing.Size(261, 465);
             this.panel1.TabIndex = 30;
             // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(259, 20);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Members Participated";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lvMembers
             // 
             this.lvMembers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -231,6 +227,26 @@ namespace JKSApp.Presentation_Layer
             this.lvMembers.TabIndex = 29;
             this.lvMembers.UseCompatibleStateImageBehavior = false;
             this.lvMembers.View = System.Windows.Forms.View.Details;
+            // 
+            // MemberFirstName
+            // 
+            this.MemberFirstName.Text = "FirstName";
+            // 
+            // MemberLastName
+            // 
+            this.MemberLastName.Text = "Last name";
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(259, 20);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Members Participated";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dgvGrading
             // 
@@ -268,6 +284,7 @@ namespace JKSApp.Presentation_Layer
             this.dgvGrading.Size = new System.Drawing.Size(1049, 529);
             this.dgvGrading.TabIndex = 29;
             this.dgvGrading.SelectionChanged += new System.EventHandler(this.dgvGrading_SelectionChanged);
+            this.dgvGrading.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvGrading_MouseDown);
             // 
             // panel2
             // 
@@ -291,13 +308,46 @@ namespace JKSApp.Presentation_Layer
             this.panel4.Size = new System.Drawing.Size(261, 578);
             this.panel4.TabIndex = 37;
             // 
-            // MemberFirstName
+            // cmsGrading
             // 
-            this.MemberFirstName.Text = "FirstName";
+            this.cmsGrading.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmSort});
+            this.cmsGrading.Name = "cmsAchievement";
+            this.cmsGrading.Size = new System.Drawing.Size(96, 26);
             // 
-            // MemberLastName
+            // tsmSort
             // 
-            this.MemberLastName.Text = "Last name";
+            this.tsmSort.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmcbxSort,
+            this.tsmbtnASC,
+            this.tsmbtnDESC});
+            this.tsmSort.Name = "tsmSort";
+            this.tsmSort.Size = new System.Drawing.Size(95, 22);
+            this.tsmSort.Text = "Sort";
+            this.tsmSort.Click += new System.EventHandler(this.tsmSort_Click);
+            // 
+            // tsmcbxSort
+            // 
+            this.tsmcbxSort.Items.AddRange(new object[] {
+            "GradingID",
+            "GradingDescription",
+            "GradingDate"});
+            this.tsmcbxSort.Name = "tsmcbxSort";
+            this.tsmcbxSort.Size = new System.Drawing.Size(121, 23);
+            // 
+            // tsmbtnASC
+            // 
+            this.tsmbtnASC.Name = "tsmbtnASC";
+            this.tsmbtnASC.Size = new System.Drawing.Size(181, 22);
+            this.tsmbtnASC.Text = "Assending";
+            this.tsmbtnASC.Click += new System.EventHandler(this.tsmbtnASC_Click);
+            // 
+            // tsmbtnDESC
+            // 
+            this.tsmbtnDESC.Name = "tsmbtnDESC";
+            this.tsmbtnDESC.Size = new System.Drawing.Size(181, 22);
+            this.tsmbtnDESC.Text = "Descending";
+            this.tsmbtnDESC.Click += new System.EventHandler(this.tsmbtnDESC_Click);
             // 
             // frmGrading
             // 
@@ -311,7 +361,9 @@ namespace JKSApp.Presentation_Layer
             this.Name = "frmGrading";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "frmGrading";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmGrading_FormClosed);
             this.Load += new System.EventHandler(this.frmGrading_Load);
+            this.EnabledChanged += new System.EventHandler(this.frmGrading_EnabledChanged);
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -320,6 +372,7 @@ namespace JKSApp.Presentation_Layer
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrading)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.cmsGrading.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -344,5 +397,10 @@ namespace JKSApp.Presentation_Layer
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.ColumnHeader MemberFirstName;
         private System.Windows.Forms.ColumnHeader MemberLastName;
+        private System.Windows.Forms.ContextMenuStrip cmsGrading;
+        private System.Windows.Forms.ToolStripMenuItem tsmSort;
+        private System.Windows.Forms.ToolStripComboBox tsmcbxSort;
+        private System.Windows.Forms.ToolStripMenuItem tsmbtnASC;
+        private System.Windows.Forms.ToolStripMenuItem tsmbtnDESC;
     }
 }

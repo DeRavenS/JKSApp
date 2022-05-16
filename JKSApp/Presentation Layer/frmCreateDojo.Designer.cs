@@ -43,6 +43,10 @@ namespace JKSApp.Presentation_Layer
             this.txtCountry = new System.Windows.Forms.TextBox();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtPhoneNum = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblCompName
@@ -168,9 +172,9 @@ namespace JKSApp.Presentation_Layer
             this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirm.ForeColor = System.Drawing.Color.Snow;
-            this.btnConfirm.Location = new System.Drawing.Point(0, 294);
+            this.btnConfirm.Location = new System.Drawing.Point(0, 391);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(277, 51);
+            this.btnConfirm.Size = new System.Drawing.Size(280, 51);
             this.btnConfirm.TabIndex = 15;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = true;
@@ -184,21 +188,63 @@ namespace JKSApp.Presentation_Layer
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Snow;
-            this.btnCancel.Location = new System.Drawing.Point(0, 345);
+            this.btnCancel.Location = new System.Drawing.Point(0, 442);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(277, 51);
+            this.btnCancel.Size = new System.Drawing.Size(280, 51);
             this.btnCancel.TabIndex = 16;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(12, 359);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(254, 22);
+            this.txtEmail.TabIndex = 19;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            this.label6.Location = new System.Drawing.Point(13, 289);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(156, 20);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Dojo Phone Number:";
+            // 
+            // txtPhoneNum
+            // 
+            this.txtPhoneNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhoneNum.Location = new System.Drawing.Point(12, 312);
+            this.txtPhoneNum.Name = "txtPhoneNum";
+            this.txtPhoneNum.Size = new System.Drawing.Size(254, 22);
+            this.txtPhoneNum.TabIndex = 17;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            this.label7.Location = new System.Drawing.Point(13, 337);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(94, 20);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Dojo E-Mail:";
             // 
             // frmCreateDojo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.ClientSize = new System.Drawing.Size(271, 390);
+            this.ClientSize = new System.Drawing.Size(280, 493);
             this.ControlBox = false;
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtPhoneNum);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.txtCountry);
@@ -215,11 +261,12 @@ namespace JKSApp.Presentation_Layer
             this.Controls.Add(this.label5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(277, 396);
+            this.MaximumSize = new System.Drawing.Size(282, 495);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(277, 396);
+            this.MinimumSize = new System.Drawing.Size(282, 495);
             this.Name = "frmCreateDojo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmCreateDojo_FormClosed);
             this.Load += new System.EventHandler(this.frmCreateDojo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -242,5 +289,9 @@ namespace JKSApp.Presentation_Layer
         private System.Windows.Forms.TextBox txtCountry;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtPhoneNum;
+        private System.Windows.Forms.Label label7;
     }
 }

@@ -19,8 +19,8 @@ namespace JKSApp.BusinessLayer
         category,
         grading,
         qualification,
-        affiliation
-
+        affiliation,
+        ratification
     }
 
     public enum CU
@@ -47,16 +47,56 @@ namespace JKSApp.BusinessLayer
                         case ObjectType.dojo:
                             while (reader.Read())
                             {
-                                lobj.Add(new Dojo(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetBoolean(7)));
+                                lobj.Add(new Dojo(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6),reader.GetBoolean(9),reader.GetString(7),reader.GetString(8)));
                             }                         
                             break;
                         case ObjectType.member:
+                            while (reader.Read())
+                            {
+                                lobj.Add(new Member(reader.GetInt32(0), reader.GetInt32(17), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(6), reader.GetString(7), reader.GetString(8), reader.GetString(9), reader.GetString(10), reader.GetString(11), reader.GetString(12), reader.GetString(13), reader.GetString(14), reader.GetString(19), reader.GetBoolean(15), reader.GetBoolean(16), reader.GetBoolean(20), reader.GetBoolean(21), reader.GetDateTime(5), (string)reader["MemberPhoto"],(int)reader["BeltID"]));
+                            }
                             break;
                         case ObjectType.belt:
                             while (reader.Read())
                             {
                                 lobj.Add(new Belt(reader.GetInt32(0), reader.GetString(1)));
                             }                           
+                            break;
+                        case ObjectType.events:
+                            while (reader.Read())
+                            {
+                                lobj.Add(new Event(reader.GetInt32(0), reader.GetString(1)));
+                            }                              
+                            break;
+                        case ObjectType.grading:
+                            while (reader.Read())
+                            {
+                                lobj.Add(new Grading(reader.GetInt32(0), reader.GetString(1)));
+                            }                               
+                            break;
+                        case ObjectType.achievement:
+                            while (reader.Read())
+                            {
+                                lobj.Add(new Achievement(reader.GetInt32(0), reader.GetString(1)));
+                            }                              
+                            break;
+                        case ObjectType.affiliation:
+                            while (reader.Read())
+                            {
+                                lobj.Add(new Affiliation(reader.GetInt32(0), reader.GetString(1)));
+                            }                                
+                            break;
+                        case ObjectType.category:
+                            while (reader.Read())
+                            {
+                                lobj.Add(new Category(reader.GetInt32(0), reader.GetString(1),reader.GetInt32(2),reader.GetInt32(3)));
+                            }                               
+                            break;
+                        case ObjectType.qualification:
+                            while (reader.Read())
+                            {
+                                lobj.Add(new Qualification(reader.GetInt32(0), reader.GetString(1)));
+                            }                              
                             break;
                         default:
                             break;

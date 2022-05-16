@@ -32,7 +32,7 @@ namespace JKSApp.Presentation_Layer
         {
             if (operation==CU.Insert)
             {
-                Dojo dojo = new Dojo(txtName.Text, txtStreet.Text, txtSubUrb.Text, txtCity.Text, txtProvince.Text, txtCountry.Text, true);
+                Dojo dojo = new Dojo(txtName.Text, txtStreet.Text, txtSubUrb.Text, txtCity.Text, txtProvince.Text, txtCountry.Text, true,txtPhoneNum.Text,txtEmail.Text);
                 if (dojo.insertDojo())
                 {                   
                     Close();
@@ -46,6 +46,8 @@ namespace JKSApp.Presentation_Layer
                 doj.Province=txtProvince.Text ;
                 doj.Street =txtStreet.Text;
                 doj.Suburb =txtSubUrb.Text;
+                doj.Phone = txtPhoneNum.Text;
+                doj.Email = txtEmail.Text;
                 if (doj.updateDojo())
                 {
                     Close();
@@ -64,7 +66,9 @@ namespace JKSApp.Presentation_Layer
                 txtName.Text = doj.Name;
                 txtProvince.Text = doj.Province;
                 txtStreet.Text = doj.Street;
-                txtSubUrb.Text = doj.Suburb;              
+                txtSubUrb.Text = doj.Suburb;
+                txtPhoneNum.Text = doj.Phone;
+                txtEmail.Text = doj.Email;
             }
         }
 
@@ -76,6 +80,11 @@ namespace JKSApp.Presentation_Layer
         private void txtStreet_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmCreateDojo_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ComponentController.activeForm.Enabled = true;
         }
     }
 }

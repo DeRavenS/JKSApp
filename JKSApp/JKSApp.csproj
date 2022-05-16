@@ -78,11 +78,23 @@
   <ItemGroup>
     <Compile Include="BusinessLayer\Achievement.cs" />
     <Compile Include="BusinessLayer\Affiliation.cs" />
+    <Compile Include="BusinessLayer\APD.cs" />
     <Compile Include="BusinessLayer\Belt.cs" />
     <Compile Include="BusinessLayer\Category.cs" />
     <Compile Include="BusinessLayer\DatabaseOperation.cs" />
+    <Compile Include="BusinessLayer\DataValidation.cs" />
+    <Compile Include="BusinessLayer\GH.cs" />
+    <Compile Include="BusinessLayer\LTJ.cs" />
+    <Compile Include="BusinessLayer\PrintReport.cs" />
+    <Compile Include="BusinessLayer\QS.cs" />
+    <Compile Include="BusinessLayer\Ratification.cs" />
     <Compile Include="BusinessLayer\StaticBindingSource.cs" />
     <Compile Include="BusinessLayer\table.cs" />
+    <Compile Include="JKSNewDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JKSNewDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Presentation Layer\ComponentController.cs" />
     <Compile Include="BusinessLayer\Dojo.cs" />
     <Compile Include="BusinessLayer\Event.cs" />
@@ -109,6 +121,12 @@
     </Compile>
     <Compile Include="Presentation Layer\frmAddMemberAchievement.Designer.cs">
       <DependentUpon>frmAddMemberAchievement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\frmAddMemberAffiliation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\frmAddMemberAffiliation.Designer.cs">
+      <DependentUpon>frmAddMemberAffiliation.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Layer\frmAddMemberEvent.cs">
       <SubType>Form</SubType>
@@ -158,6 +176,12 @@
     <Compile Include="Presentation Layer\frmCreateAchievement.Designer.cs">
       <DependentUpon>frmCreateAchievement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation Layer\frmCreateAffiliation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\frmCreateAffiliation.Designer.cs">
+      <DependentUpon>frmCreateAffiliation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation Layer\frmCreateDojo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +230,18 @@
     <Compile Include="Presentation Layer\frmGrading.Designer.cs">
       <DependentUpon>frmGrading.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation Layer\frmCreateBelt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\frmCreateBelt.Designer.cs">
+      <DependentUpon>frmCreateBelt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\frmCreateCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\frmCreateCategory.Designer.cs">
+      <DependentUpon>frmCreateCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation Layer\frmMainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,12 +254,19 @@
     <Compile Include="Presentation Layer\frmMember.Designer.cs">
       <DependentUpon>frmMember.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation Layer\frmPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\frmPrint.Designer.cs">
+      <DependentUpon>frmPrint.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation Layer\frmQualification.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentation Layer\frmQualification.Designer.cs">
       <DependentUpon>frmQualification.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation Layer\pictures.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Presentation Layer\Form1.resx">
@@ -234,6 +277,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\frmAddMemberAchievement.resx">
       <DependentUpon>frmAddMemberAchievement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\frmAddMemberAffiliation.resx">
+      <DependentUpon>frmAddMemberAffiliation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\frmAddMemberEvent.resx">
       <DependentUpon>frmAddMemberEvent.cs</DependentUpon>
@@ -259,6 +305,12 @@
     <EmbeddedResource Include="Presentation Layer\frmCreateAchievement.resx">
       <DependentUpon>frmCreateAchievement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\frmCreateAffiliation.resx">
+      <DependentUpon>frmCreateAffiliation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\frmCreateBelt.resx">
+      <DependentUpon>frmCreateBelt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\frmCreateDojo.resx">
       <DependentUpon>frmCreateDojo.cs</DependentUpon>
     </EmbeddedResource>
@@ -283,11 +335,17 @@
     <EmbeddedResource Include="Presentation Layer\frmGrading.resx">
       <DependentUpon>frmGrading.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\frmCreateCategory.resx">
+      <DependentUpon>frmCreateCategory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\frmMainMenu.resx">
       <DependentUpon>frmMainMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\frmMember.resx">
       <DependentUpon>frmMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\frmPrint.resx">
+      <DependentUpon>frmPrint.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\frmQualification.resx">
       <DependentUpon>frmQualification.cs</DependentUpon>
@@ -302,6 +360,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="JKSNewDataSet.xsc">
+      <DependentUpon>JKSNewDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="JKSNewDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>JKSNewDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="JKSNewDataSet.xss">
+      <DependentUpon>JKSNewDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\JKSApp.BusinessLayer.Dojo.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

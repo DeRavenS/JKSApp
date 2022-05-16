@@ -69,7 +69,6 @@ namespace JKSApp.BusinessLayer
                 MessageBox.Show("Operation Failed");
                 return false;
             }
-
         }
         public bool updateAchievement()
         {
@@ -96,6 +95,18 @@ namespace JKSApp.BusinessLayer
                     MessageBox.Show("Could not delete all entries");
                 }
             }                      
+        }
+
+        public List<Achievement> Search(string srch)
+        {
+            DatabaseOperation databaseOperation = new DatabaseOperation();
+            List<Achievement> lach = new List<Achievement>();
+            foreach (Achievement ach in databaseOperation.search("Achievement", $"AchievementDescription", $"'%{srch}%'", ObjectType.achievement))
+            {
+                lach.Add(ach);
+            }
+
+            return lach;
         }
     }
 }

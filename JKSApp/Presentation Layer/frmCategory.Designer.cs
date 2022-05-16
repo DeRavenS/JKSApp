@@ -29,6 +29,7 @@ namespace JKSApp.Presentation_Layer
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -43,13 +44,18 @@ namespace JKSApp.Presentation_Layer
             this.btnFirst = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lvMembers = new System.Windows.Forms.ListView();
+            this.MemberFirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.MemberLastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.dgvCategory = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.MemberFirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.MemberLastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cmsCategory = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmSort = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmcbxSort = new System.Windows.Forms.ToolStripComboBox();
+            this.tsmbtnASC = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmbtnDESC = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -58,6 +64,7 @@ namespace JKSApp.Presentation_Layer
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.cmsCategory.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -115,6 +122,7 @@ namespace JKSApp.Presentation_Layer
             this.btnSearch.TabIndex = 13;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearch
             // 
@@ -212,6 +220,7 @@ namespace JKSApp.Presentation_Layer
             this.MemberFirstName,
             this.MemberLastName});
             this.lvMembers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvMembers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvMembers.HideSelection = false;
             this.lvMembers.Location = new System.Drawing.Point(0, 30);
             this.lvMembers.Name = "lvMembers";
@@ -219,6 +228,16 @@ namespace JKSApp.Presentation_Layer
             this.lvMembers.TabIndex = 29;
             this.lvMembers.UseCompatibleStateImageBehavior = false;
             this.lvMembers.View = System.Windows.Forms.View.Details;
+            // 
+            // MemberFirstName
+            // 
+            this.MemberFirstName.Text = "First Name";
+            this.MemberFirstName.Width = 120;
+            // 
+            // MemberLastName
+            // 
+            this.MemberLastName.Text = "Last Name";
+            this.MemberLastName.Width = 120;
             // 
             // label1
             // 
@@ -268,6 +287,7 @@ namespace JKSApp.Presentation_Layer
             this.dgvCategory.Size = new System.Drawing.Size(782, 635);
             this.dgvCategory.TabIndex = 47;
             this.dgvCategory.SelectionChanged += new System.EventHandler(this.dgvCategory_SelectionChanged);
+            this.dgvCategory.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvCategory_MouseDown);
             // 
             // panel2
             // 
@@ -301,13 +321,47 @@ namespace JKSApp.Presentation_Layer
             this.panel6.Size = new System.Drawing.Size(265, 679);
             this.panel6.TabIndex = 55;
             // 
-            // MemberFirstName
+            // cmsCategory
             // 
-            this.MemberFirstName.Text = "First Name";
+            this.cmsCategory.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmSort});
+            this.cmsCategory.Name = "cmsAchievement";
+            this.cmsCategory.Size = new System.Drawing.Size(181, 48);
             // 
-            // MemberLastName
+            // tsmSort
             // 
-            this.MemberLastName.Text = "Last Name";
+            this.tsmSort.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmcbxSort,
+            this.tsmbtnASC,
+            this.tsmbtnDESC});
+            this.tsmSort.Name = "tsmSort";
+            this.tsmSort.Size = new System.Drawing.Size(180, 22);
+            this.tsmSort.Text = "Sort";
+            this.tsmSort.Click += new System.EventHandler(this.tsmSort_Click);
+            // 
+            // tsmcbxSort
+            // 
+            this.tsmcbxSort.Items.AddRange(new object[] {
+            "CategoryID",
+            "CategoryDescription",
+            "MinAge",
+            "MaxAge"});
+            this.tsmcbxSort.Name = "tsmcbxSort";
+            this.tsmcbxSort.Size = new System.Drawing.Size(121, 23);
+            // 
+            // tsmbtnASC
+            // 
+            this.tsmbtnASC.Name = "tsmbtnASC";
+            this.tsmbtnASC.Size = new System.Drawing.Size(181, 22);
+            this.tsmbtnASC.Text = "Assending";
+            this.tsmbtnASC.Click += new System.EventHandler(this.tsmbtnASC_Click);
+            // 
+            // tsmbtnDESC
+            // 
+            this.tsmbtnDESC.Name = "tsmbtnDESC";
+            this.tsmbtnDESC.Size = new System.Drawing.Size(181, 22);
+            this.tsmbtnDESC.Text = "Descending";
+            this.tsmbtnDESC.Click += new System.EventHandler(this.tsmbtnDESC_Click);
             // 
             // frmCategory
             // 
@@ -319,7 +373,9 @@ namespace JKSApp.Presentation_Layer
             this.Name = "frmCategory";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "frmCategorycs";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmCategory_FormClosed);
             this.Load += new System.EventHandler(this.frmCategorycs_Load);
+            this.EnabledChanged += new System.EventHandler(this.frmCategory_EnabledChanged);
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -329,6 +385,7 @@ namespace JKSApp.Presentation_Layer
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
+            this.cmsCategory.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -354,5 +411,10 @@ namespace JKSApp.Presentation_Layer
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.ColumnHeader MemberFirstName;
         private System.Windows.Forms.ColumnHeader MemberLastName;
+        private System.Windows.Forms.ContextMenuStrip cmsCategory;
+        private System.Windows.Forms.ToolStripMenuItem tsmSort;
+        private System.Windows.Forms.ToolStripComboBox tsmcbxSort;
+        private System.Windows.Forms.ToolStripMenuItem tsmbtnASC;
+        private System.Windows.Forms.ToolStripMenuItem tsmbtnDESC;
     }
 }

@@ -43,6 +43,7 @@ namespace JKSApp.Presentation_Layer
             this.btnAchievement = new System.Windows.Forms.Button();
             this.btnGrading = new System.Windows.Forms.Button();
             this.pnlNav = new System.Windows.Forms.Panel();
+            this.btnGenerateReports = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -50,8 +51,8 @@ namespace JKSApp.Presentation_Layer
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnExit2 = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnlNav.SuspendLayout();
@@ -89,7 +90,7 @@ namespace JKSApp.Presentation_Layer
             this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(0, 680);
+            this.btnExit.Location = new System.Drawing.Point(0, 747);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(200, 34);
             this.btnExit.TabIndex = 10;
@@ -254,6 +255,7 @@ namespace JKSApp.Presentation_Layer
             // pnlNav
             // 
             this.pnlNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.pnlNav.Controls.Add(this.btnGenerateReports);
             this.pnlNav.Controls.Add(this.btnExit);
             this.pnlNav.Controls.Add(this.btnQualification);
             this.pnlNav.Controls.Add(this.btnMember);
@@ -268,8 +270,26 @@ namespace JKSApp.Presentation_Layer
             this.pnlNav.ForeColor = System.Drawing.Color.Snow;
             this.pnlNav.Location = new System.Drawing.Point(0, 133);
             this.pnlNav.Name = "pnlNav";
-            this.pnlNav.Size = new System.Drawing.Size(200, 714);
+            this.pnlNav.Size = new System.Drawing.Size(200, 781);
             this.pnlNav.TabIndex = 1;
+            // 
+            // btnGenerateReports
+            // 
+            this.btnGenerateReports.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnGenerateReports.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.btnGenerateReports.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGenerateReports.FlatAppearance.BorderSize = 0;
+            this.btnGenerateReports.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            this.btnGenerateReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerateReports.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerateReports.Location = new System.Drawing.Point(0, 402);
+            this.btnGenerateReports.Name = "btnGenerateReports";
+            this.btnGenerateReports.Padding = new System.Windows.Forms.Padding(5);
+            this.btnGenerateReports.Size = new System.Drawing.Size(200, 51);
+            this.btnGenerateReports.TabIndex = 11;
+            this.btnGenerateReports.Text = "Generate Reports";
+            this.btnGenerateReports.UseVisualStyleBackColor = false;
+            this.btnGenerateReports.Click += new System.EventHandler(this.btnGenerateReports_Click);
             // 
             // panel2
             // 
@@ -279,7 +299,7 @@ namespace JKSApp.Presentation_Layer
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 849);
+            this.panel2.Size = new System.Drawing.Size(200, 916);
             this.panel2.TabIndex = 2;
             // 
             // panel3
@@ -302,15 +322,16 @@ namespace JKSApp.Presentation_Layer
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1658, 849);
+            this.panel4.Size = new System.Drawing.Size(1658, 916);
             this.panel4.TabIndex = 3;
             // 
             // pnlSubForms
             // 
+            this.pnlSubForms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.pnlSubForms.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlSubForms.Location = new System.Drawing.Point(200, 134);
             this.pnlSubForms.Name = "pnlSubForms";
-            this.pnlSubForms.Size = new System.Drawing.Size(1458, 715);
+            this.pnlSubForms.Size = new System.Drawing.Size(1458, 782);
             this.pnlSubForms.TabIndex = 3;
             // 
             // panel5
@@ -352,22 +373,6 @@ namespace JKSApp.Presentation_Layer
             this.btnExit2.UseVisualStyleBackColor = true;
             this.btnExit2.Click += new System.EventHandler(this.btnExit2_Click);
             // 
-            // btnEdit
-            // 
-            this.btnEdit.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnEdit.FlatAppearance.BorderSize = 0;
-            this.btnEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.ForeColor = System.Drawing.Color.Snow;
-            this.btnEdit.Location = new System.Drawing.Point(86, 0);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(86, 78);
-            this.btnEdit.TabIndex = 2;
-            this.btnEdit.Text = "EDIT";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
             // btnDelete
             // 
             this.btnDelete.Dock = System.Windows.Forms.DockStyle.Left;
@@ -383,6 +388,22 @@ namespace JKSApp.Presentation_Layer
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnEdit.FlatAppearance.BorderSize = 0;
+            this.btnEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ForeColor = System.Drawing.Color.Snow;
+            this.btnEdit.Location = new System.Drawing.Point(86, 0);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(86, 78);
+            this.btnEdit.TabIndex = 2;
+            this.btnEdit.Text = "EDIT";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnInsert
             // 
@@ -405,10 +426,10 @@ namespace JKSApp.Presentation_Layer
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1658, 849);
+            this.ClientSize = new System.Drawing.Size(1658, 916);
             this.Controls.Add(this.panel4);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(1674, 888);
+            this.MinimumSize = new System.Drawing.Size(1674, 955);
             this.Name = "frmMainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "JKS";
@@ -448,5 +469,6 @@ namespace JKSApp.Presentation_Layer
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnInsert;
+        private System.Windows.Forms.Button btnGenerateReports;
     }
 }

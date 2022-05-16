@@ -37,6 +37,8 @@ namespace JKSApp.Presentation_Layer
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dtpGrading = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +49,7 @@ namespace JKSApp.Presentation_Layer
             this.cbxGradings.FormattingEnabled = true;
             this.cbxGradings.Location = new System.Drawing.Point(0, 25);
             this.cbxGradings.Name = "cbxGradings";
-            this.cbxGradings.Size = new System.Drawing.Size(255, 24);
+            this.cbxGradings.Size = new System.Drawing.Size(269, 24);
             this.cbxGradings.TabIndex = 0;
             // 
             // cbxGrade
@@ -57,7 +59,7 @@ namespace JKSApp.Presentation_Layer
             this.cbxGrade.FormattingEnabled = true;
             this.cbxGrade.Location = new System.Drawing.Point(0, 74);
             this.cbxGrade.Name = "cbxGrade";
-            this.cbxGrade.Size = new System.Drawing.Size(255, 24);
+            this.cbxGrade.Size = new System.Drawing.Size(269, 24);
             this.cbxGrade.TabIndex = 1;
             // 
             // label1
@@ -87,12 +89,12 @@ namespace JKSApp.Presentation_Layer
             // ckbPassed
             // 
             this.ckbPassed.AutoSize = true;
-            this.ckbPassed.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ckbPassed.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.ckbPassed.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ckbPassed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
-            this.ckbPassed.Location = new System.Drawing.Point(0, 98);
+            this.ckbPassed.Location = new System.Drawing.Point(0, 248);
             this.ckbPassed.Name = "ckbPassed";
-            this.ckbPassed.Size = new System.Drawing.Size(255, 29);
+            this.ckbPassed.Size = new System.Drawing.Size(269, 29);
             this.ckbPassed.TabIndex = 4;
             this.ckbPassed.Text = "Passed";
             this.ckbPassed.UseVisualStyleBackColor = true;
@@ -105,9 +107,9 @@ namespace JKSApp.Presentation_Layer
             this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirm.ForeColor = System.Drawing.Color.Snow;
-            this.btnConfirm.Location = new System.Drawing.Point(0, 125);
+            this.btnConfirm.Location = new System.Drawing.Point(0, 277);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(255, 38);
+            this.btnConfirm.Size = new System.Drawing.Size(269, 38);
             this.btnConfirm.TabIndex = 5;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = true;
@@ -121,9 +123,9 @@ namespace JKSApp.Presentation_Layer
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Snow;
-            this.btnCancel.Location = new System.Drawing.Point(0, 163);
+            this.btnCancel.Location = new System.Drawing.Point(0, 315);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(255, 38);
+            this.btnCancel.Size = new System.Drawing.Size(269, 38);
             this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -131,26 +133,52 @@ namespace JKSApp.Presentation_Layer
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.dtpGrading);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.ckbPassed);
             this.panel1.Controls.Add(this.btnConfirm);
             this.panel1.Controls.Add(this.btnCancel);
-            this.panel1.Controls.Add(this.ckbPassed);
             this.panel1.Controls.Add(this.cbxGrade);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.cbxGradings);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(10, 10);
+            this.panel1.Margin = new System.Windows.Forms.Padding(10);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(255, 201);
+            this.panel1.Size = new System.Drawing.Size(269, 353);
             this.panel1.TabIndex = 7;
+            // 
+            // dtpGrading
+            // 
+            this.dtpGrading.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpGrading.Location = new System.Drawing.Point(1, 126);
+            this.dtpGrading.Name = "dtpGrading";
+            this.dtpGrading.Size = new System.Drawing.Size(265, 26);
+            this.dtpGrading.TabIndex = 19;
+            this.dtpGrading.Value = new System.DateTime(2021, 12, 14, 10, 26, 56, 0);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            this.label3.Location = new System.Drawing.Point(0, 98);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(139, 25);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Grading Date";
             // 
             // frmAddMemberGrading
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(281, 220);
+            this.ClientSize = new System.Drawing.Size(289, 373);
             this.Controls.Add(this.panel1);
             this.Name = "frmAddMemberGrading";
+            this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "frmAddMemberGrading";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmAddMemberGrading_FormClosed);
             this.Load += new System.EventHandler(this.frmAddMemberGrading_Load);
@@ -170,5 +198,7 @@ namespace JKSApp.Presentation_Layer
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker dtpGrading;
     }
 }

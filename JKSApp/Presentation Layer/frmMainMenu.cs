@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using JKSApp.Presentation_Layer;
 using JKSApp.BusinessLayer;
+using System.IO;
+using System.Drawing.Printing;
 
 namespace JKSApp.Presentation_Layer
 {
@@ -26,7 +28,8 @@ namespace JKSApp.Presentation_Layer
 
         private void frmMainMenu_Load(object sender, EventArgs e)
         {
-            
+            cc.GetForm(new frmAchievement(),pnlSubForms,btnAchievement);
+            tbl = new Achievement();
         }
 
         private void btnEvent_Click(object sender, EventArgs e)
@@ -38,10 +41,7 @@ namespace JKSApp.Presentation_Layer
         private void button2_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        
-
+        }       
         private void btnDojo_Click(object sender, EventArgs e)
         {
             cc.GetForm(new frmDojo(), pnlSubForms, btnDojo);
@@ -57,16 +57,19 @@ namespace JKSApp.Presentation_Layer
         private void btnAffilliation_Click(object sender, EventArgs e)
         {
             cc.GetForm(new frmAffiliation(), pnlSubForms, btnAffilliation);
+            tbl = new Affiliation();
         }
 
         private void btnBelt_Click(object sender, EventArgs e)
         {
             cc.GetForm(new frmBelt(), pnlSubForms, btnBelt);
+            tbl = new Belt();
         }
 
         private void btnCategory_Click(object sender, EventArgs e)
         {
             cc.GetForm(new frmCategory(), pnlSubForms, btnCategory);
+            tbl = new Category();
         }
 
         private void btnGrading_Click(object sender, EventArgs e)
@@ -77,7 +80,7 @@ namespace JKSApp.Presentation_Layer
 
         private void btnAchievement_Click(object sender, EventArgs e)
         {
-            cc.GetForm(new frmAchievement(),pnlSubForms,btnAchievement);
+            cc.GetForm(new frmAchievement(),pnlSubForms,btnAchievement);          
             tbl = new Achievement();
         }
 
@@ -89,7 +92,8 @@ namespace JKSApp.Presentation_Layer
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            tbl.openInsertForm(CU.Insert);
+            ComponentController.activeForm.Enabled = false;
+            if (tbl!=null) tbl.openInsertForm(CU.Insert);                               
         }
 
         private void btnExit2_Click(object sender, EventArgs e)
@@ -99,18 +103,25 @@ namespace JKSApp.Presentation_Layer
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            tbl.openUpdateForm(StaticBindingSource.source.Current);
+            ComponentController.activeForm.Enabled = false;
+            if (tbl != null) tbl.openUpdateForm(StaticBindingSource.source.Current);           
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             table deltbl = StaticBindingSource.source.Current as table;
+            if (tbl != null)
+            {
             deltbl.DeleteItem();
-        }
-
-        private void btnSort_Click(object sender, EventArgs e)
+            ComponentController.activeForm.Enabled = false;
+            ComponentController.activeForm.Enabled = true;
+            }
+                
+        }            
+        private void btnGenerateReports_Click(object sender, EventArgs e)
         {
-            
-        }
+            cc.GetForm(new frmPrint(), pnlSubForms, btnGenerateReports);
+            tbl = null;
+        }        
     }
 }

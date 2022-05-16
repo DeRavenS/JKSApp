@@ -50,7 +50,7 @@ namespace JKSApp.Presentation_Layer
 
         private void frmAddMemberAchievement_FormClosed(object sender, FormClosedEventArgs e)
         {
-            frmMember.Enabled = true;
+            ComponentController.activeForm.Enabled = true;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

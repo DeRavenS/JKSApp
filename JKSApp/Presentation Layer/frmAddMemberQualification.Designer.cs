@@ -32,8 +32,6 @@ namespace JKSApp.Presentation_Layer
             this.components = new System.ComponentModel.Container();
             this.cbxQualifications = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.lbxQualifications = new System.Windows.Forms.ListBox();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.cmsRemoveQualifications = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -41,6 +39,10 @@ namespace JKSApp.Presentation_Layer
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.dtpSADate = new System.Windows.Forms.DateTimePicker();
+            this.dtpJAPDate = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.cmsRemoveQualifications.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -68,34 +70,6 @@ namespace JKSApp.Presentation_Layer
             this.label1.TabIndex = 1;
             this.label1.Text = "Select Qualifications to add";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbxQualifications
-            // 
-            this.lbxQualifications.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lbxQualifications.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbxQualifications.FormattingEnabled = true;
-            this.lbxQualifications.ItemHeight = 20;
-            this.lbxQualifications.Location = new System.Drawing.Point(0, 65);
-            this.lbxQualifications.Name = "lbxQualifications";
-            this.lbxQualifications.Size = new System.Drawing.Size(404, 184);
-            this.lbxQualifications.TabIndex = 2;
-            this.lbxQualifications.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbxQualifications_MouseDown);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.Snow;
-            this.btnAdd.Location = new System.Drawing.Point(329, 0);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 29);
-            this.btnAdd.TabIndex = 3;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnConfirm
             // 
@@ -141,7 +115,6 @@ namespace JKSApp.Presentation_Layer
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
             this.removeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.removeToolStripMenuItem.Text = "Remove";
-            this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -153,8 +126,11 @@ namespace JKSApp.Presentation_Layer
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.dtpJAPDate);
+            this.panel2.Controls.Add(this.dtpSADate);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.lbxQualifications);
             this.panel2.Controls.Add(this.btnConfirm);
             this.panel2.Controls.Add(this.btnCancel);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -165,7 +141,6 @@ namespace JKSApp.Presentation_Layer
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.btnAdd);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.cbxQualifications);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -173,6 +148,48 @@ namespace JKSApp.Presentation_Layer
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(404, 57);
             this.panel3.TabIndex = 7;
+            // 
+            // dtpSADate
+            // 
+            this.dtpSADate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpSADate.Location = new System.Drawing.Point(0, 89);
+            this.dtpSADate.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.dtpSADate.Name = "dtpSADate";
+            this.dtpSADate.Size = new System.Drawing.Size(404, 26);
+            this.dtpSADate.TabIndex = 20;
+            this.dtpSADate.Value = new System.DateTime(2021, 12, 14, 10, 26, 56, 0);
+            // 
+            // dtpJAPDate
+            // 
+            this.dtpJAPDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpJAPDate.Location = new System.Drawing.Point(0, 147);
+            this.dtpJAPDate.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.dtpJAPDate.Name = "dtpJAPDate";
+            this.dtpJAPDate.Size = new System.Drawing.Size(404, 26);
+            this.dtpJAPDate.TabIndex = 21;
+            this.dtpJAPDate.Value = new System.DateTime(2021, 12, 14, 10, 26, 56, 0);
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            this.label2.Location = new System.Drawing.Point(3, 60);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(176, 29);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "SA Qualification Date:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(190)))), ((int)(((byte)(126)))));
+            this.label3.Location = new System.Drawing.Point(3, 118);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(176, 29);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "JAP Qualification Date:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmAddMemberQualification
             // 
@@ -197,8 +214,6 @@ namespace JKSApp.Presentation_Layer
 
         private System.Windows.Forms.ComboBox cbxQualifications;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox lbxQualifications;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.ContextMenuStrip cmsRemoveQualifications;
@@ -206,5 +221,9 @@ namespace JKSApp.Presentation_Layer
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dtpJAPDate;
+        private System.Windows.Forms.DateTimePicker dtpSADate;
     }
 }
